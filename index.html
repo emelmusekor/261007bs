@@ -118,6 +118,18 @@ main{padding:0 34px 90px} section{max-width:1120px;margin:0 auto;padding:58px 0;
 .ovt-input{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.ovt-input label{display:block}.ovt-input textarea{margin-top:6px}
 @media(max-width:980px){.artrefs{grid-template-columns:1fr 1fr}.microgrid{grid-template-columns:1fr 1fr}.reading{grid-template-columns:1fr}.ovt-input{grid-template-columns:1fr}}
 @media(max-width:680px){.artrefs,.microgrid{grid-template-columns:1fr}}
+
+/* keynote intro */
+.video-shell{background:#0b1020;border-radius:20px;overflow:hidden;box-shadow:var(--shadow);margin:16px 0}
+.video-frame{position:relative;width:100%;aspect-ratio:16/9;background:#000}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-meta{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:12px 14px;color:#d9e2f1;font-size:12px;flex-wrap:wrap}
+.video-meta a{color:#fff;font-weight:850}
+.introgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.introgrid .i{background:#fff;border:1px solid var(--line);border-radius:15px;padding:15px;box-shadow:var(--shadow)}
+.introgrid .i b{display:block;margin-bottom:5px;color:var(--blue)}
+@media(max-width:980px){.introgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){.introgrid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -173,6 +185,56 @@ main{padding:0 34px 90px} section{max-width:1120px;margin:0 auto;padding:58px 0;
     <a class="primary" href="https://padlet.com/seofuiii/padlet-babiau06dfzgfbhe" target="_blank" rel="noopener">이미지 생성 사례 ↗</a>
     <a class="primary" href="https://padlet.com/seofuiii/ginue-2026-1-34-ai-ss2m0whnx3shhw3t" target="_blank" rel="noopener">AI창의컴퓨팅 사례 ↗</a>
     <a href="resources.html">자료실 ↗</a>
+  </div>
+</section>
+<section id="intro">
+  <div class="eyebrow">0. AI는 어디까지 왔나</div>
+  <h2>토큰에서 로봇까지</h2>
+
+  <div class="video-shell">
+    <div class="video-frame">
+      <iframe
+        src="https://www.youtube.com/embed/jw_o0xr8MWU?start=0&end=175&rel=0"
+        title="NVIDIA GTC Keynote 2026 · 0:00–2:55"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+    <div class="video-meta">
+      <span>NVIDIA GTC Keynote 2026 · 0:00–2:55</span>
+      <a href="https://www.youtube.com/watch?v=jw_o0xr8MWU" target="_blank" rel="noopener">YouTube에서 전체 영상 ↗</a>
+    </div>
+  </div>
+
+  <div class="introgrid">
+    <div class="i"><b>토큰</b><ul class="compact"><li>AI가 다루는 기본 단위</li><li>데이터 → 지식으로 변환</li><li>텍스트·이미지·행동까지 이어지는 계산</li></ul></div>
+    <div class="i"><b>AI Factory</b><ul class="compact"><li>지능을 만들어 내는 새로운 공장이라는 비유</li><li>토큰을 계속 생성·처리</li><li>AI를 서비스가 아니라 생산 인프라로 봄</li></ul></div>
+    <div class="i"><b>가상 → 현실</b><ul class="compact"><li>가상환경에서 로봇 학습</li><li>현실에서 작업 수행</li><li>사람이 가기 어려운 곳·위험한 일</li></ul></div>
+    <div class="i"><b>적용 범위</b><ul class="compact"><li>에너지·과학</li><li>농업·도시</li><li>의료·로봇</li><li>우주·대규모 탐사</li></ul></div>
+  </div>
+
+  <h3 style="margin-top:28px">영상에서 잡을 말</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>영상</th><th>수업에서 볼 지점</th></tr></thead>
+    <tbody>
+      <tr><td>지능을 ‘만든다’</td><td>AI = 질문에 답하는 채팅창만이 아님</td></tr>
+      <tr><td>데이터 → 지식</td><td>자료를 넣는 것과 이해·판단이 생기는 것은 다름</td></tr>
+      <tr><td>가상세계 → 현실세계</td><td>시뮬레이션 · 로봇 · 자동화 · 에이전트로 확장</td></tr>
+      <tr><td>사람이 못 가는 곳</td><td>AI가 잘하는 일 / 사람이 남아야 하는 판단 구분</td></tr>
+      <tr><td>규모의 확대</td><td>AI 활용 단위: 한 번의 답변 → 파일 · 도구 · 여러 단계 작업</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 style="margin-top:28px">바로 던질 질문</h3>
+  <div class="grid3">
+    <div class="card"><h3>지금 학생들이 쓰는 AI</h3><ul class="compact"><li>글·그림 생성</li><li>자료 찾기</li><li>코드 만들기</li><li>공부 질문</li></ul></div>
+    <div class="card"><h3>곧 더 자주 보게 될 AI</h3><ul class="compact"><li>에이전트</li><li>브라우저 조작</li><li>파일·도구 사용</li><li>로봇·물리세계 연결</li></ul></div>
+    <div class="card"><h3>수업에서 남겨야 할 것</h3><ul class="compact"><li>무엇을 맡겼는가</li><li>무엇을 직접 판단했는가</li><li>무엇을 검증했는가</li><li>어디에 다시 쓸 수 있는가</li></ul></div>
+  </div>
+
+  <div class="linkrow">
+    <a href="https://www.nvidia.com/gtc/session-catalog/sessions/gtc26-s81595/" target="_blank" rel="noopener">NVIDIA 공식 GTC 2026 세션 ↗</a>
+    <a href="https://www.youtube.com/watch?v=jw_o0xr8MWU&t=0s" target="_blank" rel="noopener">0:00부터 YouTube 열기 ↗</a>
   </div>
 </section>
 <section id="art">
