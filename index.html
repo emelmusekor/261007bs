@@ -101,6 +101,23 @@ main{padding:0 34px 90px} section{max-width:1120px;margin:0 auto;padding:58px 0;
 .repcheck{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin-top:12px}.repcheck div{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:11px;font-size:12.5px}
 @media(max-width:980px){.repflow{grid-template-columns:1fr 1fr}.repquestions{grid-template-columns:1fr 1fr}}
 @media(max-width:680px){.repflow,.repquestions,.scenario-grid,.repcheck{grid-template-columns:1fr}}
+
+/* v10 bullet layout */
+.brief{margin:12px 0 18px;padding:0;list-style:none;display:grid;gap:7px}
+.brief li{position:relative;padding-left:18px;color:#475467}
+.brief li:before{content:"•";position:absolute;left:2px;top:0;color:var(--blue);font-weight:900}
+.compact{margin:8px 0 0;padding-left:18px;color:#475467;font-size:13.5px}
+.compact li{margin:4px 0}
+.labelrow{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 12px}.labelrow span{background:#eef2f6;color:#475467;border-radius:999px;padding:5px 8px;font-size:11px;font-weight:850}
+.artrefs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
+.artref{display:block;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;color:inherit;box-shadow:var(--shadow)}
+.artref:hover{border-color:#aab8ce}.artref .era{font-size:11px;font-weight:900;color:var(--blue);letter-spacing:.04em}.artref h3{font-size:17px;margin:5px 0}.artref ul{margin:6px 0 0;padding-left:17px;color:#475467;font-size:12.5px}
+.reading{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.reading a{display:block;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;color:inherit}.reading a b{display:block}.reading a span{display:block;font-size:12.5px;color:#667085;margin-top:4px}
+.microgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.micro{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}.micro b{display:block;margin-bottom:5px}.micro ul{margin:0;padding-left:16px;font-size:12.5px;color:#475467}
+.toolbullets{font-size:13.5px;color:#475467;margin:0}.toolbullets:before{content:"• ";color:var(--blue);font-weight:900}
+.ovt-input{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.ovt-input label{display:block}.ovt-input textarea{margin-top:6px}
+@media(max-width:980px){.artrefs{grid-template-columns:1fr 1fr}.microgrid{grid-template-columns:1fr 1fr}.reading{grid-template-columns:1fr}.ovt-input{grid-template-columns:1fr}}
+@media(max-width:680px){.artrefs,.microgrid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -138,285 +155,280 @@ main{padding:0 34px 90px} section{max-width:1120px;margin:0 auto;padding:58px 0;
     
 <section class="hero" id="start">
   <div class="eyebrow">봉수초등학교</div>
-  <h1>이미지 생성부터 게임·프로젝트까지<br>AI·디지털 수업 꾸러미</h1>
-  <p class="lead">이미지를 만들고 끝내지 않는다. 시대를 읽고, 결과를 검증하고, 게임 구조를 얹고, 영상·웹앱·프로젝트로 확장한다. 1인 1기기와 Google 계정이 있는 교실이라면 학생마다 만들고 비교하고 고치는 과정까지 충분히 가져갈 수 있다.</p>
-  <div class="grid3" style="margin-top:18px">
-    <div class="card blue"><div class="tag">만들기</div><h3>영상·이미지·게임·웹앱</h3><p>완성된 결과물을 소비하기보다 학생이 직접 만들고 수정한다.</p></div>
-    <div class="card green"><div class="tag">검증</div><h3>만든 뒤 반드시 다시 본다</h3><p>자료와 대조하고, 다른 입력을 넣고, 친구와 비교하고, 수정 뒤 다시 확인한다.</p></div>
-    <div class="card amber"><div class="tag">확장</div><h3>교과 수업을 프로젝트로 넓힌다</h3><p>Classroom·Drive를 기본 작업대로 두고 게임·영상·전시·공모전까지 연결한다.</p></div>
+  <h1>이미지·게임·프로젝트로<br>수업 다시 꾸리기</h1>
+  <ul class="brief lead">
+    <li>사조명 없이 시대 배경만 보고 이미지 추론</li>
+    <li>AI 사용 과정은 O·V·T로 기록</li>
+    <li>영상·영화·공모전·게임·웹앱을 프로젝트 수업으로 확장</li>
+    <li>1인 1기기 + Google 계정 기반 수업 운영</li>
+    <li>필요한 사이트·활동지·사례 링크는 페이지 안에서 바로 열기</li>
+  </ul>
+  <div class="grid4">
+    <div class="card blue"><h3>이미지</h3><ul class="compact"><li>시대 배경</li><li>표상과 표현</li><li>실제 작품 대조</li></ul></div>
+    <div class="card green"><h3>OVT</h3><ul class="compact"><li>무엇을 맡겼는가</li><li>무엇을 확인했는가</li><li>어디에 다시 쓸 것인가</li></ul></div>
+    <div class="card amber"><h3>프로젝트</h3><ul class="compact"><li>게임 구조</li><li>실제 관객</li><li>공개 결과물</li></ul></div>
+    <div class="card"><h3>도구</h3><ul class="compact"><li>Google 기본 작업대</li><li>교과별 사이트</li><li>게임·AI·시뮬레이션</li></ul></div>
   </div>
   <div class="linkrow">
-    <a class="primary" href="https://padlet.com/seofuiii/padlet-babiau06dfzgfbhe" target="_blank" rel="noopener">그림 생성하기 Padlet ↗</a>
-    <a class="primary" href="https://padlet.com/seofuiii/ginue-2026-1-34-ai-ss2m0whnx3shhw3t" target="_blank" rel="noopener">AI창의컴퓨팅 Padlet ↗</a>
-    <a href="#cases">수업 사례 보기 ↓</a>
-    <a href="#google">Google 1인 1기기 구성 ↓</a>
+    <a class="primary" href="https://padlet.com/seofuiii/padlet-babiau06dfzgfbhe" target="_blank" rel="noopener">이미지 생성 사례 ↗</a>
+    <a class="primary" href="https://padlet.com/seofuiii/ginue-2026-1-34-ai-ss2m0whnx3shhw3t" target="_blank" rel="noopener">AI창의컴퓨팅 사례 ↗</a>
+    <a href="resources.html">자료실 ↗</a>
   </div>
-  <div class="callout"><b>수업의 중심은 도구가 아니라 학생의 판단이다.</b><br>AI가 빠르게 만들어 주는 만큼, 무엇을 맡기고 무엇을 직접 확인할지 더 분명하게 남긴다.</div>
 </section>
-
 <section id="art">
-<div class="eyebrow">1. 표상과 이미지</div>
-<h2>사조 이름을 지우고, 시대만 보여 준다</h2>
-<p class="lead">먼저 왕, 교회, 상업도시, 산업화, 사진, 광고 같은 <b>시대의 조건만</b> 본다. 사조명과 화가 이름은 가린다. 그리고 한 가지를 묻는다. <b>“이런 사회에서는 어떤 그림이 탄생했을까?”</b> AI가 만든 이미지는 정답이 아니라 하나의 <b>가설 이미지</b>다. 실제 작품과 대조하면서 그 시대가 무엇을 보이게 했고, 무엇을 숨겼는지를 발견한다.</p>
-
-<div class="linkrow">
-  <a class="primary" href="https://padlet.com/seofuiii/padlet-babiau06dfzgfbhe" target="_blank" rel="noopener">실제 이미지 생성 사례 보기 ↗</a>
-  <a href="https://artsandculture.google.com/" target="_blank" rel="noopener">실제 작품과 대조하기 · Google Arts & Culture ↗</a>
-  <a href="downloads/image-representation-lab.txt" download>표상·이미지 활동지 받기 ↓</a>
-</div>
-
-<div class="grid2">
-  <div class="card blue">
-    <h3>표상 · 무엇을 어떤 세계로 보이게 하는가</h3>
-    <p>누가 중심인가, 누가 작게 보이는가, 무엇이 생략되는가, 관객은 누구의 시선으로 장면을 보는가를 묻는다.</p>
-    <p class="small"><b>예:</b> 왕을 다른 사람보다 훨씬 크게 그리면 크기 자체가 권력의 질서를 표상한다.</p>
+  <div class="eyebrow">1. 표상과 이미지</div>
+  <h2>사조 이름을 지우고, 시대만 보여 준다</h2>
+  <div class="grid2">
+    <div class="card blue">
+      <h3>표상</h3>
+      <ul class="compact">
+        <li>화면에 들어오는 사람·사물</li>
+        <li>가장 크게 보이는 대상</li>
+        <li>작게 밀려나거나 사라지는 대상</li>
+        <li>관객에게 허용된 시선의 위치</li>
+        <li>자연스럽고 당연한 것으로 보이게 만든 질서</li>
+      </ul>
+    </div>
+    <div class="card green">
+      <h3>표현</h3>
+      <ul class="compact">
+        <li>구도·크기·원근·시점</li>
+        <li>빛·색·선·붓질</li>
+        <li>돌·금·유화·인쇄·사진·대형 화면</li>
+        <li>반복·왜곡·생략·분해</li>
+        <li>관객에게 주는 경외·몰입·친밀감·충격</li>
+      </ul>
+    </div>
   </div>
-  <div class="card green">
-    <h3>표현 · 그 세계를 어떤 시각적 방법으로 만드는가</h3>
-    <p>구도, 빛, 색, 원근, 선, 붓질, 재료, 반복, 화면의 크기처럼 실제로 보이는 방법을 묻는다.</p>
-    <p class="small"><b>예:</b> 강한 명암과 대각선 구도는 관객이 사건 속으로 끌려 들어가는 느낌을 만든다.</p>
+
+  <h3 style="margin-top:28px">질문 하나</h3>
+  <div class="callout"><b>“이런 사회에서는 어떤 그림이 탄생했을까?”</b></div>
+
+  <div class="repflow">
+    <div class="r"><b>1. 배경</b>권력 · 종교 · 도시 · 계급 · 기술 · 시장</div>
+    <div class="r"><b>2. 예상</b>그림의 주인공 · 용도 · 관객</div>
+    <div class="r"><b>3. 가설 이미지</b>사조명 없이 AI 생성</div>
+    <div class="r"><b>4. 관찰</b>중심 · 위계 · 시선 · 배제 · 공간</div>
+    <div class="r"><b>5. 실제 작품</b>대조 후 사조명 확인</div>
   </div>
-</div>
 
-<h3 style="margin-top:28px">이미지를 읽을 때 먼저 묻는 여섯 가지</h3>
-<div class="repquestions">
-  <div class="repq"><b>1. 누가 보이는가</b><p>왕, 성인, 노동자, 시민, 상품, 익명의 사람이 화면에 들어오는가?</p></div>
-  <div class="repq"><b>2. 누가 중심인가</b><p>크기, 위치, 빛, 시선이 누구에게 몰려 있는가?</p></div>
-  <div class="repq"><b>3. 무엇이 빠졌는가</b><p>가난, 폭력, 노동, 여성, 평범한 일상처럼 보이지 않게 된 것은 무엇인가?</p></div>
-  <div class="repq"><b>4. 관객은 어디에 서 있는가</b><p>우러러보는가, 현장에 끌려드는가, 몰래 엿보는가, 광고를 소비하는가?</p></div>
-  <div class="repq"><b>5. 무엇을 믿게 하는가</b><p>권력은 정당하다, 신성하다, 인간은 존엄하다, 현실은 이렇다, 상품은 욕망할 만하다는 식의 메시지가 있는가?</p></div>
-  <div class="repq"><b>6. 왜 하필 이런 이미지인가</b><p>당시의 권력, 종교, 도시, 기술, 시장, 전쟁, 미디어 환경이 이 이미지를 왜 필요로 했는가?</p></div>
-</div>
-
-<div class="callout"><b>먼저 특징을 가르치지 않는다.</b><br>“왕과 신전이 권력을 독점한 사회라면?”, “글을 읽는 사람이 적고 교회가 교육을 맡았다면?”, “사진이 현실을 정확히 기록하기 시작했다면?”처럼 <b>배경만 제시</b>한다. 학생은 결과를 보고 “그래서 이런 이미지가 나왔구나”를 발견한다. 사조명은 마지막에 붙인다.</div>
-
-<h3 style="margin-top:28px">시대 조건에서 이미지까지</h3>
-<div class="repflow">
-  <div class="r"><b>1. 시대 읽기</b>권력, 종교, 도시, 계급, 기술, 시장</div>
-  <div class="r"><b>2. 질문</b>“이런 사회에서는 어떤 그림이 나올까?”</div>
-  <div class="r"><b>3. 가설 이미지</b>시대 조건만 AI에 주고 이미지 생성</div>
-  <div class="r"><b>4. 표상 읽기</b>누가 보이고, 누가 중심이며, 무엇이 사라졌는지 관찰</div>
-  <div class="r"><b>5. 실제 작품 대조</b>실제 작품을 보고 마지막에 사조명 확인</div>
-</div>
-
-<h3 style="margin-top:28px">사조 이름 없는 미술사 · 배경만 보고 이미지를 만난다</h3>
-<p>아래에는 사조명·작가명·대표 작품명이 없다. 교사는 시대의 조건만 보여 준다. 학생은 화면의 규칙을 미리 정하지 않는다. <b>생성된 이미지에서 무엇이 반복해서 나타나는지 관찰</b>한 뒤, 실제 작품을 보고 그 이유를 설명한다.</p>
-
-<div class="scenario-grid">
-  <article class="scenario">
-    <div class="code">상황 A · 권력과 신전</div>
-    <h3>왕과 신의 질서를 많은 사람에게 보이게 해야 한다</h3>
-    <ul><li>농경사회와 도시국가가 형성되었다.</li><li>왕과 제사장이 정치·종교 권력을 함께 가진다.</li><li>이미지는 공공장소에서 오래 남아야 한다.</li><li>통치자가 보통 사람과 다른 존재라는 인식을 만들어야 한다.</li></ul>
-    <p class="small"><b>이미지 보기 전 한마디:</b> “이런 사회라면 사람들은 어떤 그림을 많이 보게 될까?” 정도만 예상해 본다. 생성 뒤에는 누가 크게 보였고 누가 작아졌는지 확인한다.</p>
-    <details class="reveal"><summary>생성한 뒤 역사적 연결 확인</summary><p>고대 왕권·신전 중심 이미지와 연결된다. 위계적 크기, 정면성, 상징, 견고한 재료가 자주 나타났다.</p></details>
-  </article>
-
-  <article class="scenario">
-    <div class="code">상황 B · 글을 읽지 못하는 관객과 거대한 종교기관</div>
-    <h3>이미지가 이야기를 가르치고 신성함을 느끼게 해야 한다</h3>
-    <ul><li>교육·기록·구호의 중심에 종교기관이 있다.</li><li>많은 관객은 글을 능숙하게 읽지 못한다.</li><li>이미지는 복잡한 이야기를 한눈에 전달해야 한다.</li><li>금과 값비싼 안료는 신성함과 후원자의 힘을 동시에 보여 준다.</li></ul>
-    <p class="small"><b>이미지 보기 전 한마디:</b> “글보다 이미지가 더 중요하다면 그림은 무엇을 잘해야 할까?”를 먼저 말해 본다. 생성 뒤에는 누가 중심이고 어떤 상징이 반복되는지 본다.</p>
-    <details class="reveal"><summary>생성한 뒤 역사적 연결 확인</summary><p>중세 종교 이미지와 연결된다. 금빛 배경, 상징, 위계적 배치, 평면적 공간이 흔하다.</p></details>
-  </article>
-
-  <article class="scenario">
-    <div class="code">상황 C · 부유한 도시와 인간에 대한 관심</div>
-    <h3>현실 공간과 인간의 능력을 설득력 있게 보여 주고 싶다</h3>
-    <ul><li>상업과 금융이 발달한 도시가 성장한다.</li><li>상인·은행가·귀족이 미술의 중요한 후원자가 된다.</li><li>고전 문화, 수학, 해부학, 인간 자체에 대한 관심이 커진다.</li><li>개인의 얼굴과 현실적인 공간을 설득력 있게 보여 주고 싶다.</li></ul>
-    <p class="small"><b>이미지 보기 전 한마디:</b> “도시와 인간에 관심이 커지면 그림의 주인공과 공간은 어떻게 달라질까?”를 예상한다. 생성 뒤에는 사람과 공간이 어떻게 달라졌는지 본다.</p>
-    <details class="reveal"><summary>생성한 뒤 역사적 연결 확인</summary><p>르네상스와 연결된다. 원근법, 인체 비례, 초상, 안정된 공간 구성이 중요해졌다.</p></details>
-  </article>
-
-  <article class="scenario">
-    <div class="code">상황 D · 종교 경쟁과 절대 권력</div>
-    <h3>차분히 설명하는 것보다 사람을 압도하고 감정을 움직여야 한다</h3>
-    <ul><li>종교적 갈등이 크고, 사람의 믿음을 강하게 붙잡을 필요가 있다.</li><li>왕과 궁정도 권력과 위엄을 극적으로 보여 주고 싶다.</li><li>연극과 거대한 건축처럼 ‘장면의 힘’이 중요해진다.</li><li>관객은 그림을 보는 사람이 아니라 사건 안에 들어온 사람처럼 느껴야 한다.</li></ul>
-    <p class="small"><b>이미지 보기 전 한마디:</b> “사람의 감정을 강하게 움직여야 한다면 그림은 차분할까, 극적일까?”를 예상한다. 생성 뒤에 빛·움직임·몸짓을 찾는다.</p>
-    <details class="reveal"><summary>생성한 뒤 역사적 연결 확인</summary><p>바로크와 연결된다. 극적인 명암, 대각선, 큰 몸짓, 순간의 사건성이 자주 나타난다.</p></details>
-  </article>
-
-  <article class="scenario">
-    <div class="code">상황 E · 사적인 살롱과 여가</div>
-    <h3>권력의 웅장함보다 친밀하고 세련된 즐거움을 보여 주고 싶다</h3>
-    <ul><li>귀족의 사적 공간과 살롱 문화가 발달한다.</li><li>공적인 역사·종교 장면보다 사랑, 놀이, 정원, 여가가 중요해진다.</li><li>작품은 거대한 공공장소보다 실내 장식과 친밀한 감상을 위해 소비된다.</li></ul>
-    <p class="small"><b>이미지 보기 전 한마디:</b> “공적인 권력보다 사적인 여가가 중요해지면 무엇이 그림에 등장할까?”를 예상한다. 생성 뒤에 색·장식·인물의 행동을 본다.</p>
-    <details class="reveal"><summary>생성한 뒤 역사적 연결 확인</summary><p>로코코와 연결된다. 파스텔 색, 곡선, 장식성, 친밀하고 유희적인 장면이 나타난다.</p></details>
-  </article>
-
-  <article class="scenario">
-    <div class="code">상황 F · 공장과 노동, 계급의 가시화</div>
-    <h3>영웅과 신이 아니라 평범한 사람의 현실을 화면에 올린다</h3>
-    <ul><li>산업화로 도시 노동과 빈곤, 계급 문제가 눈에 띄게 커진다.</li><li>평범한 농민과 노동자의 삶이 중요한 사회적 현실이 된다.</li><li>이상적인 신화나 아름다운 영웅만 그리는 방식에 반발이 생긴다.</li></ul>
-    <p class="small"><b>이미지 보기 전 한마디:</b> “산업화로 노동자의 삶이 사회문제가 되면 그림에 누가 새로 등장할까?”를 예상한다. 생성 뒤에 평범한 인물이 어떻게 다뤄졌는지 본다.</p>
-    <details class="reveal"><summary>생성한 뒤 역사적 연결 확인</summary><p>19세기 사실주의와 연결된다. 노동, 일상, 평범한 인물을 큰 화면에 놓는 변화가 나타났다.</p></details>
-  </article>
-
-  <article class="scenario">
-    <div class="code">상황 G · 사진, 근대 도시, 새로운 여가</div>
-    <h3>정확히 베끼는 일은 카메라가 한다. 그림은 순간의 ‘봄’을 붙잡는다</h3>
-    <ul><li>사진이 정확한 외형 기록을 빠르게 해낸다.</li><li>도시가 재편되고 카페, 공원, 극장 같은 새로운 여가 공간이 늘어난다.</li><li>기차·휴대용 물감·튜브 물감 덕분에 야외 제작이 쉬워진다.</li><li>순간에 바뀌는 빛과 날씨, 움직이는 도시의 느낌이 중요해진다.</li></ul>
-    <p class="small"><b>이미지 보기 전 한마디:</b> “카메라가 정확한 모습을 대신 기록한다면 화가는 무엇을 새로 그리려 할까?”를 예상한다. 생성 뒤에 빛·움직임·잘린 장면을 찾는다.</p>
-    <details class="reveal"><summary>생성한 뒤 역사적 연결 확인</summary><p>인상주의와 연결된다. 밝은 색, 순간의 빛, 짧은 붓질, 사진처럼 잘린 비대칭 구도가 나타났다.</p></details>
-  </article>
-
-  <article class="scenario">
-    <div class="code">상황 H · 한 시점으로는 충분하지 않다</div>
-    <h3>사진과 영화가 있는 시대에, 그림은 대상을 ‘보는 방법’ 자체를 다시 묻는다</h3>
-    <ul><li>사진과 영화가 외형을 기록하는 능력을 빠르게 확장한다.</li><li>기억 속 대상은 한 방향에서만 보이지 않는다는 문제의식이 생긴다.</li><li>유럽 밖 조각과 시각문화가 식민주의적 접촉 속에서 유럽 미술에 강한 영향을 준다.</li><li>전쟁과 급격한 사회 변화가 안정된 세계관을 흔든다.</li></ul>
-    <p class="small"><b>이미지 보기 전 한마디:</b> “한 장의 사진보다 다르게 보여 주려면 그림은 무엇을 할 수 있을까?”를 예상한다. 생성 뒤에 시점과 형태가 어떻게 흔들렸는지 본다.</p>
-    <details class="reveal"><summary>생성한 뒤 역사적 연결 확인</summary><p>20세기 초 입체주의와 연결된다. 여러 시점을 한 화면에 겹치고 형태를 분해·재구성했다.</p></details>
-  </article>
-
-  <article class="scenario">
-    <div class="code">상황 I · 광고, 슈퍼마켓, 텔레비전, 유명인</div>
-    <h3>이미지가 상품처럼 대량 복제되는 사회 자체를 작품 안으로 가져온다</h3>
-    <ul><li>텔레비전, 광고, 슈퍼마켓, 연예인 이미지가 일상을 덮는다.</li><li>같은 상품과 얼굴이 인쇄와 방송을 통해 끝없이 반복된다.</li><li>예술과 상업 이미지의 경계가 흐려진다.</li><li>손으로 한 번만 그린 ‘유일한 원본’의 가치도 다시 묻게 된다.</li></ul>
-    <p class="small"><b>이미지 보기 전 한마디:</b> “똑같은 광고와 상품 이미지가 매일 반복되면 예술은 그것을 어떻게 다룰까?”를 예상한다. 생성 뒤에 반복·복제·상품 이미지를 찾는다.</p>
-    <details class="reveal"><summary>생성한 뒤 역사적 연결 확인</summary><p>팝아트, 특히 실크스크린을 이용한 반복 이미지와 연결된다.</p></details>
-  </article>
-
-  <article class="scenario">
-    <div class="code">상황 J · 전쟁 이후, 말로 설명하기 어려운 감정</div>
-    <h3>사물의 모습보다 관객이 화면 앞에서 느끼는 상태가 중요해진다</h3>
-    <ul><li>전쟁, 홀로코스트, 핵무기 같은 경험이 인간과 문명에 대한 불안을 키운다.</li><li>구체적인 사건을 다시 그리는 대신 더 보편적인 감정과 침묵을 찾으려 한다.</li><li>큰 미술관과 전시장 안에서 거대한 화면 자체가 관객을 둘러싸는 경험을 만든다.</li></ul>
-    <p class="small"><b>이미지 보기 전 한마디:</b> “말로 설명하기 어려운 불안과 침묵을 그림은 어떻게 보여 줄까?”를 예상한다. 생성 뒤에 대상이 줄어들고 색과 규모가 커지는지 본다.</p>
-    <details class="reveal"><summary>생성한 뒤 역사적 연결 확인</summary><p>전후 추상회화와 색면회화, 특히 로스코의 작업과 연결해 볼 수 있다.</p></details>
-  </article>
-</div>
-
-<h3 style="margin-top:30px">수업의 질문 순서</h3>
-<div class="tablewrap">
-<table>
-<thead><tr><th>순서</th><th>하는 일</th><th>학생에게 묻는 말</th></tr></thead>
-<tbody>
-<tr><td><b>1. 배경</b></td><td>사회·기술·후원자·관객의 조건만 제시한다.</td><td>“이 시대 사람들은 무엇을 중요하게 여겼을까?”</td></tr>
-<tr><td><b>2. 예상</b></td><td>형식 용어 없이 아주 짧게 예상한다.</td><td>“이런 사회에서는 어떤 그림이 많이 나왔을까?”</td></tr>
-<tr><td><b>3. 생성</b></td><td>교사가 준비한 고정 문장으로 시대 조건만 AI에 준다.</td><td>학생은 프롬프트를 만들지 않는다.</td></tr>
-<tr><td><b>4. 관찰</b></td><td>생성된 이미지에서 중심·위계·시선·배제·공간을 찾는다.</td><td>“왜 이런 모습이 나왔을까?”</td></tr>
-<tr><td><b>5. 대조</b></td><td>같은 시대의 실제 작품 2~3점을 본다.</td><td>“AI 이미지와 실제 작품이 어디에서 닮고 다를까?”</td></tr>
-<tr><td><b>6. 이름</b></td><td>마지막에 역사적 사조명과 표현 용어를 붙인다.</td><td>“그래서 이 시기의 미술을 이렇게 부르는구나.”</td></tr>
-</tbody>
-</table>
-</div>
-
-<div class="prompt" id="pContextOnly">다음은 한 시대의 사회적 배경이다. 특정 미술 사조명, 화가명, 대표 작품명은 말하지 말고, 이 사회에서 실제로 만들어졌을 법한 회화 이미지 한 장을 생성해줘. 당시의 권력관계, 주요 관객, 이미지가 맡았을 사회적 기능, 이용 가능한 기술과 재료가 자연스럽게 화면에 반영되게 해줘. 현대의 물건과 관습은 넣지 마. 결과 설명이나 사조의 정답 이름은 말하지 말고 이미지만 만들어줘.<button class="copy" data-copy="pContextOnly">교사용 문장 복사</button></div>
-<p class="small">이 문장은 교사용 고정 문장이다. 학생 활동은 프롬프트 작성이 아니라 <b>배경 읽기 → 이미지 관찰 → 실제 작품 대조 → 이유 설명</b>이다.</p>
-
-<h3 style="margin-top:30px">이미지가 나오면 다시 표상을 읽는다</h3>
-<div class="repcheck">
-  <div><b>중심</b><br>누가 가장 먼저 보이는가?</div>
-  <div><b>위계</b><br>크기·빛·위치가 누구에게 몰리는가?</div>
-  <div><b>시선</b><br>관객은 올려다보나, 현장에 들어가나, 멀리서 관찰하나?</div>
-  <div><b>배제</b><br>그 시대에 있었지만 화면에서 사라진 것은 무엇인가?</div>
-  <div><b>공간</b><br>깊이와 시점은 현실처럼 하나인가, 여러 개로 흔들리는가?</div>
-  <div><b>몸</b><br>인물은 이상화되나, 평범한가, 해체되나?</div>
-  <div><b>물질</b><br>금, 돌, 유화, 인쇄, 거대한 색면 같은 재료 효과가 무엇을 말하는가?</div>
-  <div><b>관객 효과</b><br>경외·신앙·친밀함·현실감·충격·욕망 중 무엇을 만들고 있는가?</div>
-</div>
-
-<div class="callout"><b>마지막에만 이름을 붙인다.</b><br>처음부터 “인상주의”, “입체파”, “팝아트”를 알려 주면 결과를 확인하는 수업이 된다. 배경만 먼저 주면 학생은 <b>왜 그런 그림이 나타날 수밖에 없었는지</b>를 이미지와 실제 작품 사이에서 발견하게 된다. AI가 만든 이미지는 역사적 증거가 아니라 <b>비교를 위한 가설</b>이고, 실제 작품이 근거가 된다.</div>
-</section><section id="ovt">
-      <div class="eyebrow">2. OVT</div>
-      <h2>AI를 썼다면, 이 세 가지가 보여야 한다</h2>
-      <p class="lead"><b>O</b>는 일을 나누는 것, <b>V</b>는 직접 확인하는 것, <b>T</b>는 다른 문제로 옮기는 것입니다. “AI를 잘 썼다”는 말만으로는 부족합니다. 무엇을 맡겼고, 무엇을 사람 손으로 확인했고, 다음에 어디에 다시 쓸지까지 남아야 합니다.</p>
-      <div class="grid3" style="margin-top:18px">
-        <div class="card blue"><h3>O · Orchestration</h3><p>무엇을 AI에게 맡길지, 무엇은 학생이 직접 판단할지를 정한다. 처음 생성 후 조건을 추가하거나 버리는 일도 여기에 들어간다.</p></div>
-        <div class="card green"><h3>V · Verification</h3><p>자료와 대조하고, 직접 눌러 보고, 틀릴 만한 입력을 넣고, 수정 뒤 다시 확인한다. “한 번 더 물어봤다”는 검증이 아니다.</p></div>
-        <div class="card amber"><h3>T · Transfer</h3><p>활동에서 쓴 질문 방식, 프롬프트 구조, 검증 순서를 다른 문제에도 다시 쓸 수 있어야 한다.</p></div>
-      </div>
-
-      <h3 style="margin-top:28px">수업 사례로 보는 OVT</h3>
-      <div class="grid2">
-        <article class="ovt-case">
-          <div class="meta">미술 · 미술사조 이미지 생성</div>
-          <h3>시대 읽기를 프롬프트로 옮기기</h3>
-          <div class="ovt-row"><div class="ovt-box">O</div><div>학생이 시대·후원자·목적·표현을 먼저 정하고, AI는 그 조건에 맞는 이미지를 만든다. “예쁘게” 같은 모호한 말은 줄이고, 실제로 넣어야 할 시대 단서를 고른다.</div></div>
-          <div class="ovt-row"><div class="ovt-box">V</div><div>생성된 그림에서 옷, 건물, 빛, 상징, 구도를 확인한다. 예를 들어 중세 그림에 현대 창문이나 운동화가 섞였는지 찾는다. 잘못 들어간 요소가 있으면 왜 어색한지 설명한 뒤 다시 만든다.</div></div>
-          <div class="ovt-row"><div class="ovt-box">T</div><div>다음에는 같은 방식으로 사회, 역사, 국어 삽화 만들기에도 쓴다. 즉 <b>배경 읽기 → 핵심 단서 고르기 → 생성 → 대조</b>의 순서를 다른 교과에 옮긴다.</div></div>
-        </article>
-        <article class="ovt-case">
-          <div class="meta">국어 · 글쓰기 피드백</div>
-          <h3>고쳐 쓰기 대신 질문 받기</h3>
-          <div class="ovt-row"><div class="ovt-box">O</div><div>AI에게 “완성본을 써 줘”가 아니라 “좋은 점 1개, 헷갈리는 부분 1개, 다시 생각할 질문 1개만 줘”라고 역할을 제한한다.</div></div>
-          <div class="ovt-row"><div class="ovt-box">V</div><div>실제로 학생 글을 넣어 보았을 때 AI가 정답 문장을 대신 써버리는지 확인한다. 그러면 “문장을 대신 써 주지 말 것” 조건을 추가한다.</div></div>
-          <div class="ovt-row"><div class="ovt-box">T</div><div>독후감, 설명문, 주장하는 글 모두에 같은 질문형 피드백 방식을 쓴다.</div></div>
-        </article>
-        <article class="ovt-case">
-          <div class="meta">수학 · 오답 탐정</div>
-          <h3>AI에게 오답을 만들게 하고 학생이 이유를 밝히기</h3>
-          <div class="ovt-row"><div class="ovt-box">O</div><div>AI는 분수 비교, 약분, 소수 계산에서 그럴듯한 오답을 3개 만든다. 학생은 무엇이 왜 틀렸는지 말한다.</div></div>
-          <div class="ovt-row"><div class="ovt-box">V</div><div>AI가 만든 오답이 진짜 오답인지 먼저 계산한다. 정답이 섞였거나 설명이 이상하면 버리고 다시 생성한다.</div></div>
-          <div class="ovt-row"><div class="ovt-box">T</div><div>비, 비율, 도형, 규칙 찾기에도 같은 구조를 사용한다.</div></div>
-        </article>
-        <article class="ovt-case">
-          <div class="meta">SW · 맞춤법 게임 만들기</div>
-          <h3>작동 확인은 정답일 때보다 실패할 때 먼저</h3>
-          <div class="ovt-row"><div class="ovt-box">O</div><div>문항, 하트, 힌트, 점수, 다시하기를 나눠서 요청한다. 한 번에 다 해달라고 하기보다 기능을 분리한다.</div></div>
-          <div class="ovt-row"><div class="ovt-box">V</div><div>틀린 답을 누를 때 하트가 줄어드는지, 연속 오답에서 점수가 이상해지지 않는지, 마지막에 다시하기가 제대로 되는지 본다.</div></div>
-          <div class="ovt-row"><div class="ovt-box">T</div><div>다른 게임에서도 <b>정상 상황 + 실패 상황 + 빈 입력</b>을 모두 넣어 보는 습관으로 이어 간다.</div></div>
-        </article>
-        <article class="ovt-case">
-          <div class="meta">학급 운영 · 짝꿍/모둠 편성</div>
-          <h3>정상값만 넣으면 오류가 숨어 있다</h3>
-          <div class="ovt-row"><div class="ovt-box">O</div><div>AI는 이름 목록을 정리하고 짝을 제안한다. 교사는 성별, 관계, 지원 필요 학생 등 실제 조건은 사람이 본다.</div></div>
-          <div class="ovt-row"><div class="ovt-box">V</div><div>20명뿐 아니라 21명, 중복 이름, 빈칸이 있는 자료도 넣어 본다. 남는 학생 처리 방식이 적절한지 확인한다.</div></div>
-          <div class="ovt-row"><div class="ovt-box">T</div><div>청소당번, 발표순서, 역할 분담표에도 같은 검증 방식을 적용한다.</div></div>
-        </article>
-        <article class="ovt-case">
-          <div class="meta">과학 · 시뮬레이션 설명</div>
-          <h3>결과가 말이 되는지 교과와 대조하기</h3>
-          <div class="ovt-row"><div class="ovt-box">O</div><div>AI는 실험 조건을 설명하고 학생은 변수를 바꾸며 예측을 세운다. 변수는 많아도 2개 정도로 제한한다.</div></div>
-          <div class="ovt-row"><div class="ovt-box">V</div><div>최솟값, 최댓값, 0, 빈 입력을 넣어 본다. 결과가 교과서나 실제 시뮬레이션과 맞는지 대조한다.</div></div>
-          <div class="ovt-row"><div class="ovt-box">T</div><div>다른 실험에서도 <b>예측 → 조작 → 관찰 → 설명</b> 구조를 반복한다.</div></div>
-        </article>
-      </div>
-
-      <h3 style="margin-top:28px">짧은 기록보다, 판단이 보이는 기록</h3>
-      <div class="tablewrap">
-        <table>
-          <thead><tr><th></th><th>흔한 기록</th><th>더 나은 기록</th></tr></thead>
-          <tbody>
-            <tr><td><b>O</b></td><td>AI에게 그림을 만들어 달라고 했다.</td><td>중세 그림을 만들기 전에 교회가 왜 그림을 주문했는지 정리했다. 금박, 상징, 정면성을 조건으로 넣고 “현대 물건은 제외”를 추가했다.</td></tr>
-            <tr><td><b>V</b></td><td>맞는지 확인했다.</td><td>그림 속 옷과 건물을 시대 자료와 비교했다. 유리창 모양이 현대식이라 다시 요청했고, 수정 뒤 다시 확인했다.</td></tr>
-            <tr><td><b>T</b></td><td>다른 수업에도 활용할 수 있다.</td><td>다음에는 사회 지역 소개 삽화에서도 배경·관객·목적을 먼저 정하고, 이미지가 자료와 맞는지 대조해 볼 것이다.</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="builder">
-        <div class="label">OVT 기록지</div>
-        <div class="grid3">
-          <textarea placeholder="O · 무엇을 맡겼나\n- 목표\n- AI 역할\n- 내가 직접 판단한 것\n- 중간에 바꾼 조건"></textarea>
-          <textarea placeholder="V · 무엇을 확인했나\n- 비교한 자료\n- 눌러 본 것\n- 찾은 오류\n- 수정 뒤 재확인"></textarea>
-          <textarea placeholder="T · 어디에 옮길까\n- 다음 과제\n- 그대로 쓸 질문\n- 바꿔야 할 점"></textarea>
-        </div>
-      </div>
-    </section>
-
-    
-<section id="preservice">
-  <div class="eyebrow">요즘 교대의 AI 수업</div>
-  <h2>“AI 써보기”보다 직접 만들고, 고치고, 배포하는 경험</h2>
-  <p class="lead">AI 교육 내용을 읽는 데서 끝나지 않고, 필요한 프로그램을 직접 기획해 웹앱이나 게임으로 만든다. 실행하면서 오류를 고치고, 동료의 결과와 비교하고, 공개 가능한 형태로 다듬는다.</p>
-  <div class="linkrow">
-    <a class="primary" href="https://padlet.com/seofuiii/ginue-2026-1-34-ai-ss2m0whnx3shhw3t" target="_blank" rel="noopener">2026-1 경인교대 AI창의컴퓨팅 Padlet 열기 ↗</a>
+  <h3 style="margin-top:28px">이미지에서 찾을 것</h3>
+  <div class="microgrid">
+    <div class="micro"><b>중심</b><ul><li>가장 먼저 보이는 대상</li><li>화면 중앙·빛·크기의 집중</li></ul></div>
+    <div class="micro"><b>위계</b><ul><li>큰 사람 / 작은 사람</li><li>높은 자리 / 낮은 자리</li></ul></div>
+    <div class="micro"><b>시선</b><ul><li>올려다봄</li><li>현장 안으로 끌려듦</li><li>멀리서 관찰함</li></ul></div>
+    <div class="micro"><b>배제</b><ul><li>화면에 없는 계층</li><li>감춰진 노동·폭력·빈곤</li></ul></div>
+    <div class="micro"><b>공간</b><ul><li>평면 / 깊이</li><li>한 시점 / 여러 시점</li></ul></div>
+    <div class="micro"><b>몸</b><ul><li>이상화</li><li>일상적 몸</li><li>분해·왜곡</li></ul></div>
+    <div class="micro"><b>물질</b><ul><li>금·돌·유화</li><li>사진·인쇄·대량복제</li></ul></div>
+    <div class="micro"><b>효과</b><ul><li>경외·신앙</li><li>현실감·친밀함</li><li>욕망·충격·불안</li></ul></div>
   </div>
-  <div class="grid3">
-    <div class="prestep"><b>AI 교육 내용을 앱으로 바꿈</b><p>데이터 편향을 확인하는 프로그램, AI 윤리 퀴즈, 딥페이크 판별 게임, 개인정보 위험도 분석처럼 “설명”을 “체험”으로 바꿉니다.</p></div>
-    <div class="prestep"><b>개념을 시뮬레이션으로 바꿈</b><p>K-최근접 이웃, 강화학습, 머신러닝·딥러닝 같은 개념을 눌러 보고 실패해 보는 프로그램으로 바꿉니다.</p></div>
-    <div class="prestep"><b>게임을 직접 기획함</b><p>게임의 장르, 조작법, 화면, 숨은 목표까지 정하고, 사회 풍자나 수학적 원리처럼 게임 안에 메시지를 넣습니다.</p></div>
-    <div class="prestep"><b>기획과 코딩 도구를 나눠 씀</b><p>아이디어와 규칙은 ChatGPT·Gemini 같은 대화형 AI로 다듬고, 실제 코드는 Antigravity 같은 제작 도구에서 단계별로 만듭니다.</p></div>
-    <div class="prestep"><b>결과만 보지 않음</b><p>게임 제작 평가에서도 과정과 결과를 함께 보고, 동료평가와 수정이 들어갑니다. “멋진 화면”보다 무엇을 고민하고 고쳤는지가 중요합니다.</p></div>
-    <div class="prestep"><b>AI 오류를 경험함</b><p>없는 라이브러리, 잘못된 코드, 긴 생성시간, 한 번에 많이 시켜 생긴 오류를 직접 겪고 작업을 쪼개는 법을 배웁니다.</p></div>
+
+  <h3 style="margin-top:30px">사조 이름 없는 미술사</h3>
+  <div class="scenario-grid">
+    <article class="scenario">
+      <div class="code">A · 왕권과 신전</div><h3>권력의 차이를 눈으로 보여 줘야 하는 사회</h3>
+      <ul>
+        <li>농경사회 · 도시국가 형성</li><li>왕·제사장에게 정치·종교 권력 집중</li><li>공공장소에 오래 남는 이미지 필요</li><li>통치자와 일반인의 차이를 명확하게 표상</li>
+      </ul>
+      <details class="reveal"><summary>실제 미술사 연결</summary><p>고대 왕권·신전 미술 · 위계적 크기 · 정면성 · 상징 · 견고한 재료</p></details>
+    </article>
+    <article class="scenario">
+      <div class="code">B · 낮은 문해율과 종교기관</div><h3>글 대신 이미지가 이야기를 가르쳐야 하는 사회</h3>
+      <ul>
+        <li>교회·수도원 중심의 교육·기록</li><li>글을 읽기 어려운 대중</li><li>성서 이야기를 한눈에 전달</li><li>금·값비싼 안료 → 신성함 + 후원자의 힘</li>
+      </ul>
+      <details class="reveal"><summary>실제 미술사 연결</summary><p>중세 종교미술 · 금빛 배경 · 상징 · 위계적 배치 · 평면적 공간</p></details>
+    </article>
+    <article class="scenario">
+      <div class="code">C · 상업도시와 인간에 대한 관심</div><h3>현실 공간과 인간의 능력을 설득력 있게 보여 주는 사회</h3>
+      <ul>
+        <li>상업·금융 도시 성장</li><li>상인·은행가·귀족의 후원 확대</li><li>고전 문화·수학·해부학 관심</li><li>개인의 얼굴·인체·현실 공간 강조</li>
+      </ul>
+      <details class="reveal"><summary>실제 미술사 연결</summary><p>르네상스 · 원근법 · 인체 비례 · 초상 · 안정된 공간</p></details>
+    </article>
+    <article class="scenario">
+      <div class="code">D · 종교 경쟁과 절대 권력</div><h3>설명보다 감정을 움직여야 하는 사회</h3>
+      <ul>
+        <li>종교 갈등</li><li>왕실·궁정의 권력 과시</li><li>연극·거대 건축과 결합된 장면성</li><li>관객을 사건 안으로 끌어들이는 이미지</li>
+      </ul>
+      <details class="reveal"><summary>실제 미술사 연결</summary><p>바로크 · 극적인 명암 · 대각선 · 큰 몸짓 · 순간 포착</p></details>
+    </article>
+    <article class="scenario">
+      <div class="code">E · 사적인 살롱과 여가</div><h3>웅장함보다 친밀한 즐거움이 소비되는 사회</h3>
+      <ul>
+        <li>귀족의 사적 공간·살롱 문화</li><li>사랑·놀이·정원·여가</li><li>공공 기념물보다 실내 장식</li><li>가볍고 세련된 분위기 선호</li>
+      </ul>
+      <details class="reveal"><summary>실제 미술사 연결</summary><p>로코코 · 파스텔 · 곡선 · 장식 · 유희적 장면</p></details>
+    </article>
+    <article class="scenario">
+      <div class="code">F · 산업화와 노동</div><h3>평범한 사람의 현실이 사회문제가 된 시대</h3>
+      <ul>
+        <li>산업화·도시화</li><li>노동·빈곤·계급 문제 확대</li><li>농민·노동자 일상의 가시화</li><li>영웅·신화의 이상화에 대한 거부</li>
+      </ul>
+      <details class="reveal"><summary>실제 미술사 연결</summary><p>사실주의 · 노동 · 일상 · 평범한 인물 · 현실적 화면</p></details>
+    </article>
+    <article class="scenario">
+      <div class="code">G · 사진과 근대 도시</div><h3>카메라가 외형을 기록하기 시작한 시대</h3>
+      <ul>
+        <li>사진의 확산</li><li>카페·공원·극장 등 도시 여가 확대</li><li>기차·튜브 물감 → 야외 제작</li><li>순간의 빛·날씨·움직임에 관심</li>
+      </ul>
+      <details class="reveal"><summary>실제 미술사 연결</summary><p>인상주의 · 밝은 색 · 짧은 붓질 · 순간의 빛 · 잘린 구도</p></details>
+    </article>
+    <article class="scenario">
+      <div class="code">H · 사진 이후의 회화</div><h3>한 시점으로 대상을 설명하기 어려워진 시대</h3>
+      <ul>
+        <li>사진·영화의 기록 기능 확대</li><li>기억·움직임·여러 시점에 관심</li><li>전쟁과 급격한 사회 변화</li><li>외부 문화와의 접촉 속 형태 실험</li>
+      </ul>
+      <details class="reveal"><summary>실제 미술사 연결</summary><p>입체주의 · 여러 시점 · 형태의 분해·재구성 · 단일 원근 해체</p></details>
+    </article>
+    <article class="scenario">
+      <div class="code">I · 광고와 대량복제</div><h3>같은 상품과 유명인 이미지가 끝없이 반복되는 사회</h3>
+      <ul>
+        <li>TV·광고·슈퍼마켓·연예인 이미지</li><li>대량생산·대량소비</li><li>예술과 상업 이미지의 경계 약화</li><li>유일한 원본의 가치에 대한 질문</li>
+      </ul>
+      <details class="reveal"><summary>실제 미술사 연결</summary><p>팝아트 · 상품 이미지 · 실크스크린 · 반복·복제</p></details>
+    </article>
+    <article class="scenario">
+      <div class="code">J · 전쟁 이후의 불안</div><h3>사물보다 화면 앞에서 느끼는 상태가 중요해진 시대</h3>
+      <ul>
+        <li>전쟁·홀로코스트·핵무기 경험</li><li>문명과 인간에 대한 불안</li><li>구체적 사건보다 보편적 감정</li><li>거대한 화면과 관객의 몰입</li>
+      </ul>
+      <details class="reveal"><summary>실제 미술사 연결</summary><p>전후 추상·색면회화 · 큰 색면 · 대상 축소 · 침묵·몰입</p></details>
+    </article>
   </div>
-  <div class="callout"><b>생성형 AI 수업의 기본 단위가 ‘질문 한 번’에서 ‘작은 프로그램 하나’로 넓어지고 있다.</b><br>데이터 편향, AI 윤리, 강화학습, K-NN 같은 개념도 설명문 대신 눌러 보고 실패해 보는 프로그램으로 바뀐다.</div>
+
+  <h3 style="margin-top:30px">대표 작품 · 먼저 보고 이름은 나중에</h3>
+  <div class="artrefs">
+    <a class="artref" href="https://en.wikipedia.org/wiki/Standard_of_Ur" target="_blank" rel="noopener"><div class="era">고대</div><h3>Standard of Ur</h3><ul><li>권력·전쟁·행렬</li><li>인물 크기의 위계</li></ul></a>
+    <a class="artref" href="https://en.wikipedia.org/wiki/Maest%C3%A0_%28Duccio%29" target="_blank" rel="noopener"><div class="era">중세</div><h3>Duccio · Maestà</h3><ul><li>제단화</li><li>금·성인·종교 서사</li></ul></a>
+    <a class="artref" href="https://en.wikipedia.org/wiki/The_School_of_Athens" target="_blank" rel="noopener"><div class="era">르네상스</div><h3>Raphael · The School of Athens</h3><ul><li>고전 지식</li><li>원근·인간·건축 공간</li></ul></a>
+    <a class="artref" href="https://en.wikipedia.org/wiki/The_Calling_of_Saint_Matthew" target="_blank" rel="noopener"><div class="era">바로크</div><h3>Caravaggio · The Calling of Saint Matthew</h3><ul><li>강한 명암</li><li>사건의 순간</li></ul></a>
+    <a class="artref" href="https://en.wikipedia.org/wiki/The_Swing_%28Fragonard%29" target="_blank" rel="noopener"><div class="era">로코코</div><h3>Fragonard · The Swing</h3><ul><li>귀족적 여가</li><li>장식·유희·은밀함</li></ul></a>
+    <a class="artref" href="https://en.wikipedia.org/wiki/The_Gleaners" target="_blank" rel="noopener"><div class="era">사실주의</div><h3>Millet · The Gleaners</h3><ul><li>농민 노동</li><li>평범한 인물의 전면화</li></ul></a>
+    <a class="artref" href="https://en.wikipedia.org/wiki/Impression%2C_Sunrise" target="_blank" rel="noopener"><div class="era">인상주의</div><h3>Monet · Impression, Sunrise</h3><ul><li>빛·대기</li><li>순간성</li></ul></a>
+    <a class="artref" href="https://en.wikipedia.org/wiki/Les_Demoiselles_d%27Avignon" target="_blank" rel="noopener"><div class="era">입체주의 전야</div><h3>Picasso · Les Demoiselles d'Avignon</h3><ul><li>단일 원근 해체</li><li>형태 분해</li></ul></a>
+    <a class="artref" href="https://en.wikipedia.org/wiki/Fountain_%28Duchamp%29" target="_blank" rel="noopener"><div class="era">다다</div><h3>Duchamp · Fountain</h3><ul><li>선택이 작품이 되는 순간</li><li>제도와 맥락</li></ul></a>
+    <a class="artref" href="https://en.wikipedia.org/wiki/Campbell%27s_Soup_Cans" target="_blank" rel="noopener"><div class="era">팝아트</div><h3>Warhol · Campbell's Soup Cans</h3><ul><li>상품 이미지</li><li>반복·대량소비</li></ul></a>
+    <a class="artref" href="https://en.wikipedia.org/wiki/No._61_%28Rust_and_Blue%29" target="_blank" rel="noopener"><div class="era">색면회화</div><h3>Rothko · No. 61 (Rust and Blue)</h3><ul><li>대형 색면</li><li>관객의 몰입·감정</li></ul></a>
+  </div>
+
+  <h3 style="margin-top:30px">읽을 거리</h3>
+  <div class="reading">
+    <a href="https://en.wikipedia.org/wiki/Medieval_art" target="_blank" rel="noopener"><b>Medieval art · Wikipedia</b><span>교회·종교·상징·중세 시각문화</span></a>
+    <a href="https://en.wikipedia.org/wiki/Renaissance_art" target="_blank" rel="noopener"><b>Renaissance art · Wikipedia</b><span>도시·후원·인문주의·원근법</span></a>
+    <a href="https://en.wikipedia.org/wiki/Baroque" target="_blank" rel="noopener"><b>Baroque · Wikipedia</b><span>종교 경쟁·권력·극적 표현</span></a>
+    <a href="https://en.wikipedia.org/wiki/Rococo" target="_blank" rel="noopener"><b>Rococo · Wikipedia</b><span>살롱·여가·장식·귀족 문화</span></a>
+    <a href="https://en.wikipedia.org/wiki/Realism_(arts)" target="_blank" rel="noopener"><b>Realism · Wikipedia</b><span>산업화·노동·일상·현실</span></a>
+    <a href="https://en.wikipedia.org/wiki/Impressionism" target="_blank" rel="noopener"><b>Impressionism · Wikipedia</b><span>사진·근대 도시·야외·빛</span></a>
+    <a href="https://en.wikipedia.org/wiki/Cubism" target="_blank" rel="noopener"><b>Cubism · Wikipedia</b><span>여러 시점·형태 해체</span></a>
+    <a href="https://en.wikipedia.org/wiki/Dada" target="_blank" rel="noopener"><b>Dada · Wikipedia</b><span>전쟁·반예술·레디메이드</span></a>
+    <a href="https://en.wikipedia.org/wiki/Pop_art" target="_blank" rel="noopener"><b>Pop art · Wikipedia</b><span>광고·상품·대량복제</span></a>
+    <a href="https://en.wikipedia.org/wiki/Color_field" target="_blank" rel="noopener"><b>Color field · Wikipedia</b><span>색면·대형 화면·몰입</span></a>
+  </div>
+
+  <h3 style="margin-top:30px">수업 순서</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>순서</th><th>제시</th><th>학생 활동</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>시대 배경 4~5개</td><td>중요하게 보이는 사회 조건 표시</td></tr>
+      <tr><td>2</td><td>“어떤 그림이 나올까?”</td><td>한두 문장 예상</td></tr>
+      <tr><td>3</td><td>AI 가설 이미지</td><td>중심·위계·시선·배제 관찰</td></tr>
+      <tr><td>4</td><td>실제 작품 2~3점</td><td>AI 이미지와 공통점·차이점 표시</td></tr>
+      <tr><td>5</td><td>사조명·표현 용어</td><td>왜 이런 표현이 등장했는지 설명</td></tr>
+      <tr><td>6</td><td>다음 시대 배경</td><td>이전 시대와 달라질 이미지 예상</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="prompt" id="pContextOnly">다음 시대의 사회적 배경만 바탕으로 당시 만들어졌을 법한 회화 이미지 한 장을 생성해줘. 특정 미술 사조명, 화가명, 대표 작품명은 말하지 마. 당시 권력관계, 주요 관객, 이미지의 사회적 기능, 사용할 수 있었던 기술과 재료를 화면에 자연스럽게 반영해줘. 현대의 물건과 관습은 넣지 마. 결과 설명이나 정답 이름 없이 이미지만 생성해줘.<button class="copy" data-copy="pContextOnly">교사용 문장 복사</button></div>
 </section>
+<section id="ovt">
+  <div class="eyebrow">2. OVT</div>
+  <h2>맡김 · 확인 · 전이</h2>
+  <div class="grid3">
+    <div class="card blue"><h3>O · Orchestration</h3><ul class="compact"><li>AI에게 맡길 일</li><li>학생이 직접 할 판단</li><li>작업 순서</li><li>중간에 바꾼 조건</li><li>버린 결과와 다시 시킨 이유</li></ul></div>
+    <div class="card green"><h3>V · Verification</h3><ul class="compact"><li>원자료와 대조</li><li>직접 실행</li><li>오답·빈 입력·경계값 시험</li><li>다른 기기에서 재확인</li><li>수정 뒤 다시 확인</li></ul></div>
+    <div class="card amber"><h3>T · Transfer</h3><ul class="compact"><li>다른 문제에 그대로 쓸 절차</li><li>바꿔야 할 조건</li><li>재사용 가능한 질문</li><li>검증 순서</li><li>다음 과제에서 실제 적용</li></ul></div>
+  </div>
 
+  <h3 style="margin-top:28px">사례</h3>
+  <div class="grid2">
+    <article class="ovt-case"><div class="meta">미술 · 시대 배경에서 이미지 추론</div><h3>사조명 없이 시작</h3>
+      <div class="ovt-row"><div class="ovt-box">O</div><ul class="compact"><li>교사: 시대 배경 + 고정 생성문 제공</li><li>학생: “어떤 그림이 나올까?” 예상</li><li>AI: 배경만으로 가설 이미지 생성</li></ul></div>
+      <div class="ovt-row"><div class="ovt-box">V</div><ul class="compact"><li>실제 작품 2~3점 대조</li><li>시대에 없는 물건·건축·복식 확인</li><li>중심·위계·시선·배제 비교</li></ul></div>
+      <div class="ovt-row"><div class="ovt-box">T</div><ul class="compact"><li>사회: 시대 배경 → 포스터·신문 이미지 읽기</li><li>국어: 시대 배경 → 삽화 읽기</li><li>미디어: 광고 환경 → 반복·과장 분석</li></ul></div>
+    </article>
+    <article class="ovt-case"><div class="meta">국어 · 글쓰기</div><h3>정답 문장 대신 질문</h3>
+      <div class="ovt-row"><div class="ovt-box">O</div><ul class="compact"><li>좋은 점 1개</li><li>헷갈리는 부분 1개</li><li>다시 생각할 질문 1개</li><li>문장 대신 써주기 금지</li></ul></div>
+      <div class="ovt-row"><div class="ovt-box">V</div><ul class="compact"><li>학생 원문과 AI 피드백 대조</li><li>사실과 다른 지적 삭제</li><li>AI가 대신 써 준 문장 제거</li></ul></div>
+      <div class="ovt-row"><div class="ovt-box">T</div><ul class="compact"><li>독후감</li><li>설명문</li><li>주장하는 글</li><li>발표 원고</li></ul></div>
+    </article>
+    <article class="ovt-case"><div class="meta">수학 · 오답 탐정</div><h3>그럴듯한 오답을 재료로</h3>
+      <div class="ovt-row"><div class="ovt-box">O</div><ul class="compact"><li>AI: 오답 3개 생성</li><li>학생: 틀린 지점 표시</li><li>정답 설명은 학생 몫</li></ul></div>
+      <div class="ovt-row"><div class="ovt-box">V</div><ul class="compact"><li>AI 오답 직접 계산</li><li>정답이 섞이면 폐기</li><li>오류 원인 분류</li></ul></div>
+      <div class="ovt-row"><div class="ovt-box">T</div><ul class="compact"><li>분수 → 비·비율</li><li>연산 → 도형</li><li>풀이 → 규칙 찾기</li></ul></div>
+    </article>
+    <article class="ovt-case"><div class="meta">웹앱 · 맞춤법 게임</div><h3>정상 작동보다 실패 상황</h3>
+      <div class="ovt-row"><div class="ovt-box">O</div><ul class="compact"><li>문항</li><li>하트</li><li>힌트</li><li>점수</li><li>다시하기</li></ul></div>
+      <div class="ovt-row"><div class="ovt-box">V</div><ul class="compact"><li>연속 오답</li><li>마지막 문항</li><li>빈 입력</li><li>다시하기</li><li>모바일 화면</li></ul></div>
+      <div class="ovt-row"><div class="ovt-box">T</div><ul class="compact"><li>정상값 + 경계값 + 오류값</li><li>다른 게임에도 같은 테스트 순서 적용</li></ul></div>
+    </article>
+    <article class="ovt-case"><div class="meta">학급 운영 · 짝꿍 뽑기</div><h3>예외값부터 확인</h3>
+      <div class="ovt-row"><div class="ovt-box">O</div><ul class="compact"><li>명단 정리</li><li>짝 제안</li><li>실제 관계·지원 필요 조건은 교사 판단</li></ul></div>
+      <div class="ovt-row"><div class="ovt-box">V</div><ul class="compact"><li>20명</li><li>21명</li><li>중복 이름</li><li>빈칸</li><li>남는 학생 처리</li></ul></div>
+      <div class="ovt-row"><div class="ovt-box">T</div><ul class="compact"><li>청소당번</li><li>발표순서</li><li>모둠 역할</li></ul></div>
+    </article>
+    <article class="ovt-case"><div class="meta">과학 · 시뮬레이션</div><h3>예측과 실제 결과 대조</h3>
+      <div class="ovt-row"><div class="ovt-box">O</div><ul class="compact"><li>변수 1~2개</li><li>먼저 예측</li><li>AI는 반례·추가 상황 제시</li></ul></div>
+      <div class="ovt-row"><div class="ovt-box">V</div><ul class="compact"><li>최솟값·최댓값·0</li><li>교과서·PhET 등과 대조</li><li>설명과 현상 불일치 확인</li></ul></div>
+      <div class="ovt-row"><div class="ovt-box">T</div><ul class="compact"><li>예측 → 조작 → 관찰 → 설명</li><li>다른 실험 단원으로 이동</li></ul></div>
+    </article>
+  </div>
 
+  <h3 style="margin-top:28px">기록 수준</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th></th><th>약한 기록</th><th>남길 만한 기록</th></tr></thead>
+    <tbody>
+      <tr><td><b>O</b></td><td>AI에게 시켰다</td><td>문항 생성만 AI에 맡김 · 정답 검산과 오답 설명은 직접 수행</td></tr>
+      <tr><td><b>V</b></td><td>확인했다</td><td>21명·중복 이름·빈칸 입력 시험 → 남는 학생 처리 오류 확인 → 수정 뒤 재실행</td></tr>
+      <tr><td><b>T</b></td><td>다른 데도 쓸 수 있다</td><td>짝꿍 뽑기의 예외값 검사 순서를 청소당번 프로그램에 그대로 적용</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="builder">
+    <div class="label">OVT 기록</div>
+    <div class="ovt-input">
+      <label>O · 맡긴 일 / 직접 한 판단<textarea placeholder="예: 오답 3개 생성은 AI / 정답 검산과 오류 설명은 직접"></textarea></label>
+      <label>V · 실제 확인<textarea placeholder="예: 정답·오답·빈 입력을 실행 / 수정 뒤 다시 확인"></textarea></label>
+      <label>T · 다시 쓸 곳<textarea placeholder="예: 같은 검사 순서를 다음 게임에도 적용"></textarea></label>
+    </div>
+  </div>
+</section>
+<section id="preservice">
+  <div class="eyebrow">AI창의컴퓨팅</div>
+  <h2>읽기보다 제작 · 제작보다 검증</h2>
+  <div class="linkrow"><a class="primary" href="https://padlet.com/seofuiii/ginue-2026-1-34-ai-ss2m0whnx3shhw3t" target="_blank" rel="noopener">2026-1 AI창의컴퓨팅 Padlet ↗</a></div>
+  <div class="grid3">
+    <div class="prestep"><b>AI 개념 → 앱</b><ul class="compact"><li>데이터 편향 체험</li><li>AI 윤리 퀴즈</li><li>딥페이크 판별</li><li>개인정보 위험도</li></ul></div>
+    <div class="prestep"><b>알고리즘 → 조작</b><ul class="compact"><li>k-NN</li><li>강화학습</li><li>마르코프</li><li>유전알고리즘</li><li>Naive Bayes</li></ul></div>
+    <div class="prestep"><b>게임 → 메시지</b><ul class="compact"><li>장르·조작·규칙</li><li>숨은 목표</li><li>사회 풍자</li><li>수학·과학 원리</li></ul></div>
+    <div class="prestep"><b>기획 → 구현</b><ul class="compact"><li>기획서 먼저</li><li>핵심 기능부터 제작</li><li>한 번에 전부 요청하지 않기</li></ul></div>
+    <div class="prestep"><b>실행 → 수정</b><ul class="compact"><li>오류 재현</li><li>수정 범위 지정</li><li>다른 기기 확인</li><li>중간본 보관</li></ul></div>
+    <div class="prestep"><b>결과 → 성찰</b><ul class="compact"><li>AI가 도운 부분</li><li>직접 판단한 부분</li><li>아직 모르는 것</li><li>다음에 바꿀 것</li></ul></div>
+  </div>
+</section>
 <section id="cases">
   <div class="eyebrow">영상·프로젝트 수업 사례</div>
   <h2>영상·영화·공모전·수학·졸업 프로젝트</h2>
-  <p class="lead">교과 내용을 영상, 영화, 상품, 공모전, 전시, 졸업 콘텐츠처럼 다른 형식으로 바꾸면 학생이 해야 할 일이 달라진다. 아래 사례는 결과물의 모양보다 <b>조사·선택·제작·공개</b>의 구조를 보는 데 초점을 둔다.</p>
+  <div class="labelrow"><span>영상</span><span>영화</span><span>공모전</span><span>수학 산출물</span><span>사회 프로젝트</span><span>졸업·학급문화</span><span>웹앱·게임</span></div>
+  <div class="tablewrap" style="margin-bottom:18px"><table><thead><tr><th>구조</th><th>볼 것</th></tr></thead><tbody>
+    <tr><td>영상·영화</td><td>대본 · 역할 · 장면 · 촬영 · 편집 · 관객</td></tr>
+    <tr><td>공모전</td><td>주제 해석 · 규정 읽기 · 공개 기준 · 수정</td></tr>
+    <tr><td>수학 산출물</td><td>개념을 보이는 방법 · 규칙 · 설명 가능성</td></tr>
+    <tr><td>사회 프로젝트</td><td>자료 조사 · 관점 · 실제 대상 · 설득</td></tr>
+    <tr><td>학급문화</td><td>공동 기억 · 참여 · 역할 · 공개 방식</td></tr>
+    <tr><td>웹앱·게임</td><td>기획 · 실행 · 오류 · 테스트 · 배포</td></tr>
+  </tbody></table></div>
   <div class="casebar">
     <input id="caseSearch" placeholder="영화, 수학, 공모전, 졸업, 영상 등 검색">
     <button class="btn" onclick="clearCaseSearch()">검색 지우기</button>
@@ -468,135 +480,128 @@ main{padding:0 34px 90px} section{max-width:1120px;margin:0 auto;padding:58px 0;
     <div class="caseitem"><div class="date">AI 개념</div><h3>k-NN 사과 분류기</h3><div class="kind">k와 거리·특징 선택이 결과를 바꾸는지 확인</div></div>
     <div class="caseitem"><div class="date">AI 개념</div><h3>Naive Bayes 문장·스팸 분류기</h3><div class="kind">단어별 확률과 보정이 분류에 미치는 영향 확인</div></div>
   </div>
-  <div class="callout"><b>같은 도구라도 과제의 구조가 달라지면 수업이 완전히 달라진다.</b><br>영화는 역할 분담과 서사, 여행상품은 고객과 제약조건, 기약분수는 개념 설명, 공모전은 공개 결과물과 수정 과정이 중심이 된다.</div>
+  <div class="callout"><b>과제의 구조가 달라지면 같은 도구도 다른 수업</b><br>영화는 역할 분담과 서사, 여행상품은 고객과 제약조건, 기약분수는 개념 설명, 공모전은 공개 결과물과 수정 과정이 중심이 된다.</div>
 </section>
 
 <section id="design">
-      <div class="eyebrow">3. 수업 꾸림</div>
-      <h2>점수·배지보다 강한 게임 구조</h2>
-      <p class="lead">점수와 배지만 붙이는 것으로는 금방 식습니다. <b>탐색하고, 조합하고, 잠금을 풀고, 선택에 따라 길이 갈리고, 마지막 과제를 통과하는 구조</b>가 수업 안에 들어오면 학생의 행동이 달라집니다.</p>
+  <div class="eyebrow">3. 게임화·프로젝트</div>
+  <h2>점수보다 선택 · 해금 · 조합 · 공개</h2>
 
-      <h3>게임을 ‘하는 것’과 수업을 ‘게임처럼 설계하는 것’은 다르다</h3>
-      <div class="levels">
-        <div class="level"><h3>얇은 게임화</h3><ul><li>점수</li><li>배지</li><li>순위</li><li>출석 보상</li></ul><p class="small">쉽게 붙일 수 있지만 학습 행동이 바뀌지 않으면 오래 가지 않습니다.</p></div>
-        <div class="level"><h3>조금 더 좋은 게임화</h3><ul><li>미션</li><li>단계 해금</li><li>즉시 피드백</li><li>선택 가능한 경로</li></ul><p class="small">학생이 “다음에는 무엇을 해야 하지?”를 스스로 알 수 있습니다.</p></div>
-        <div class="level"><h3>프로젝트형 게임화</h3><ul><li>실제 문제</li><li>역할</li><li>탐색과 조합</li><li>중간 보스·최종 공개</li></ul><p class="small">게임 장치가 프로젝트의 조사·제작·수정과 맞물립니다.</p></div>
-      </div>
+  <h3>게임 구조 6가지</h3>
+  <div class="grid3">
+    <div class="card"><h3>조합 · Crafting</h3><ul class="compact"><li>요소 둘 이상 결합</li><li>결과 예측</li><li>새 조합 발견</li><li>왜 가능한지 설명</li></ul><p class="small">예: Little Alchemy식 개념 조합 · 역사 인물+선택 · 수학 조건+숫자</p></div>
+    <div class="card"><h3>해금 · Unlock</h3><ul class="compact"><li>조건 충족 → 다음 단계</li><li>자료·힌트·문제 순차 공개</li><li>학습 경로 시각화</li></ul><p class="small">예: 분수 던전 · 영어 표현 미션 · 역사 연표</p></div>
+    <div class="card"><h3>분기 · Branching</h3><ul class="compact"><li>선택에 따라 다른 장면</li><li>결과 비교</li><li>되돌아가 다른 선택 시험</li></ul><p class="small">예: 우리반 영화 · 역사 선택 시나리오 · 도덕 딜레마</p></div>
+    <div class="card"><h3>보스 · Boss</h3><ul class="compact"><li>여러 개념 통합</li><li>마지막에 복합 문제</li><li>단순 점수보다 설명 요구</li></ul><p class="small">예: 단원 마무리 문제 · 팀별 최종 도전</p></div>
+    <div class="card"><h3>탐색 · Scavenger</h3><ul class="compact"><li>교실·학교·지역 이동</li><li>사진·위치·자료 찾기</li><li>근거 제출</li></ul><p class="small">예: 학교 안전 퀘스트 · 지역 문화재 · 과학 관찰</p></div>
+    <div class="card"><h3>건설 · Build</h3><ul class="compact"><li>조건 안에서 설계</li><li>제작 → 시험 → 수정</li><li>완성보다 선택 이유</li></ul><p class="small">예: 여행상품 · Minecraft 건축 · 졸업 전시</p></div>
+  </div>
 
-      <h3 style="margin-top:28px">Little Alchemy에서 가져올 것은 ‘정답’이 아니라 조합 구조</h3>
-      <div class="grid2">
-        <div class="card blue"><h3>두 가지를 합쳐 새 것을 발견한다</h3><p>Little Alchemy 2는 요소를 조합해 새로운 요소를 발견하는 방식입니다. 수업에서는 이 구조를 가져와 <b>개념 + 개념, 자료 + 관점, 조건 + 조건</b>을 조합하게 할 수 있습니다.</p><p class="small">게임 속 조합은 과학 사실이 아닙니다. 내용 지식의 근거로 쓰지 말고, ‘조합하며 가설을 세우는 방식’만 가져옵니다.</p></div>
-        <div class="card green"><h3>발견 → 기록 → 설명</h3><p>무작정 눌러 보는 것으로 끝내지 않고 “왜 이 조합이 가능하다고 생각했는가?”를 기록하게 하면 게임이 사고 활동이 됩니다.</p><p class="small">예: 미술사조 + 현대 소재, 지역 + 문제, 인물 + 선택, 수학 조건 + 숫자.</p></div>
-      </div>
+  <h3 style="margin-top:30px">Little Alchemy에서 가져올 것</h3>
+  <div class="grid2">
+    <div class="card green"><h3>두 가지를 합친다</h3><ul class="compact"><li>요소 선택</li><li>결과 예상</li><li>조합 실행</li><li>예상과 실제 비교</li></ul></div>
+    <div class="card blue"><h3>발견을 설명한다</h3><ul class="compact"><li>왜 이 조합이 가능한가</li><li>다른 조합은 왜 실패했는가</li><li>새로운 규칙은 무엇인가</li><li>다음 조합에 무엇을 적용할까</li></ul></div>
+  </div>
 
-      <div class="game-grid">
-        <div class="game-card"><div class="mechanic">CRAFTING</div><h3>조합</h3><p>두 요소를 합쳐 새로운 결과를 만든다.</p><div class="example">미술: 인상주의 + 학교 운동장 → 빛과 순간이 중심인 학교 장면</div></div>
-        <div class="game-card"><div class="mechanic">UNLOCK</div><h3>해금</h3><p>앞 미션을 통과해야 다음 자료나 문제가 열린다.</p><div class="example">수학: 기약분수 3문제를 설명해야 다음 방으로 이동</div></div>
-        <div class="game-card"><div class="mechanic">BRANCHING</div><h3>분기</h3><p>학생의 선택에 따라 다음 장면이나 과제가 달라진다.</p><div class="example">우리반 영화: 같은 사건을 다른 선택으로 이어지는 두 결말로 제작</div></div>
-        <div class="game-card"><div class="mechanic">BOSS</div><h3>보스 문제</h3><p>중간에 여러 개념을 한 번에 써야 하는 종합 과제를 둔다.</p><div class="example">분수 단원: 계산보다 설명과 반례를 요구하는 최종 문제</div></div>
-        <div class="game-card"><div class="mechanic">SCAVENGER</div><h3>탐색</h3><p>교실·학교·지역에서 단서를 찾아 미션을 해결한다.</p><div class="example">학교폭력 예방: 학교 공간별 갈등 상황 카드와 해결 단서 찾기</div></div>
-        <div class="game-card"><div class="mechanic">BUILD</div><h3>건설</h3><p>조건을 만족하는 세계·제품·공간을 직접 만든다.</p><div class="example">사회: 지속가능한 우리 동네 또는 여행상품 설계</div></div>
-      </div>
+  <h3 style="margin-top:30px">프로젝트 수업 기준</h3>
+  <div class="microgrid">
+    <div class="micro"><b>질문</b><ul><li>한 줄 정답으로 끝나지 않음</li><li>여러 해결안 가능</li></ul></div>
+    <div class="micro"><b>탐구</b><ul><li>자료 조사</li><li>관찰·실험·인터뷰</li></ul></div>
+    <div class="micro"><b>선택</b><ul><li>주제·역할·도구</li><li>표현 방식</li></ul></div>
+    <div class="micro"><b>중간본</b><ul><li>초안·스토리보드</li><li>프로토타입</li></ul></div>
+    <div class="micro"><b>비평</b><ul><li>동료 피드백</li><li>반영 여부 판단</li></ul></div>
+    <div class="micro"><b>수정</b><ul><li>1회 이상 재제작</li><li>변화 이유 기록</li></ul></div>
+    <div class="micro"><b>관객</b><ul><li>친구·학부모·지역</li><li>온라인 공개</li></ul></div>
+    <div class="micro"><b>성찰</b><ul><li>OVT</li><li>다음 프로젝트 전이</li></ul></div>
+  </div>
 
-      <div class="toolbox-bold">
-        <a class="bold-link" href="https://littlealchemy2.com/" target="_blank" rel="noopener"><div class="kind">조합·발견</div><h3>Little Alchemy 2</h3><p>두 요소를 조합해 새로운 요소를 발견하는 게임. 조합형 수업 구조를 설명하기 좋습니다.</p><div class="use">수업에서: 조합 규칙 자체가 아니라 ‘가설 → 시도 → 발견 → 설명’ 구조를 가져오기</div></a>
-        <a class="bold-link" href="https://deck.toys/" target="_blank" rel="noopener"><div class="kind">퀘스트 맵</div><h3>Deck.Toys</h3><p>활동을 지도처럼 연결하고 잠금, 분기, 게임을 넣어 수업 모험을 만들 수 있습니다.</p><div class="use">수업에서: 분수 던전, 우리말 탐정, 역사 퀘스트</div></a>
-        <a class="bold-link" href="https://genially.com/create/escape-room/" target="_blank" rel="noopener"><div class="kind">방탈출</div><h3>Genially Escape Room</h3><p>템플릿을 이용해 문제를 풀며 다음 장면으로 이동하는 디지털 방탈출을 만들 수 있습니다.</p><div class="use">수업에서: 단원 마무리, 미션형 복습</div></a>
-        <a class="bold-link" href="https://www.goosechase.com/" target="_blank" rel="noopener"><div class="kind">현장 미션</div><h3>Goosechase</h3><p>학생이 교실이나 학교 안을 움직이며 사진·텍스트·미션을 수행하는 scavenger hunt를 만들 수 있습니다.</p><div class="use">수업에서: 학교 탐방, 안전 미션, 지역 조사</div></a>
-        <a class="bold-link" href="https://www.thinglink.com/" target="_blank" rel="noopener"><div class="kind">분기·몰입</div><h3>ThingLink</h3><p>이미지·360° 장면에 핫스팟을 붙이고, 분기형 시나리오와 질문을 만들 수 있습니다.</p><div class="use">수업에서: 박물관, 역사 현장, 재난 대응 시뮬레이션</div></a>
-        <a class="bold-link" href="https://education.minecraft.net/ko-kr/resources/classroom-build-challenge" target="_blank" rel="noopener"><div class="kind">건설·프로젝트</div><h3>Minecraft Education Build Challenge</h3><p>조건을 만족하는 도시·공간·해결책을 직접 만드는 프로젝트형 게임 학습에 잘 맞습니다.</p><div class="use">수업에서: 지속가능한 도시, 지역 설계, 역사 공간 재현</div></a>
-        <a class="bold-link" href="https://www.flippity.net/" target="_blank" rel="noopener"><div class="kind">가벼운 방탈출</div><h3>Flippity</h3><p>Virtual Breakout, 퍼즐, 카드, 랜덤 도구를 비교적 가볍게 만들 수 있습니다.</p><div class="use">수업에서: 짧은 복습 미션</div></a>
-        <a class="bold-link" href="https://classroomscreen.com/templates" target="_blank" rel="noopener"><div class="kind">교실 게임</div><h3>Classroomscreen Games</h3><p>한 화면에서 타이머·랜덤·스코어보드와 게임 템플릿을 섞어 빠르게 쓸 수 있습니다.</p><div class="use">수업에서: 5분 게임, 모둠 대결, brain break</div></a>
-        <a class="bold-link" href="https://www.blooket.com/" target="_blank" rel="noopener"><div class="kind">반복·숙달</div><h3>Blooket</h3><p>같은 문제 세트를 여러 게임 모드로 돌려 반복 학습을 가볍게 만들 수 있습니다.</p><div class="use">수업에서: 용어·기초지식 반복</div></a>
-      </div>
+  <h3 style="margin-top:30px">실제 과제 → 프로젝트로 확장</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>기존 과제</th><th>프로젝트 질문</th><th>게임 구조</th><th>공개 결과물</th></tr></thead>
+    <tbody>
+      <tr><td>학교 폭력 예방 규칙 만들기</td><td>실제로 지켜지는 규칙은 어떻게 만들까?</td><td>탐색 · 해금</td><td>학교 안전 퀘스트</td></tr>
+      <tr><td>올바른 우리말 영상</td><td>학교에서 가장 자주 헷갈리는 말은?</td><td>보스 · 수집</td><td>우리말 탐정 영상</td></tr>
+      <tr><td>왕가리 마타이 소개 영상</td><td>한 사람의 선택은 사회를 얼마나 바꿀까?</td><td>분기</td><td>선택 중심 인물 영상</td></tr>
+      <tr><td>우리반 영화만들기</td><td>같은 사건에서 선택이 달라지면?</td><td>분기</td><td>멀티엔딩 학급 영화</td></tr>
+      <tr><td>세계 여행상품 만들기</td><td>누구에게 어떤 여행을 팔 것인가?</td><td>건설 · 자원 제한</td><td>여행 스타트업 피치</td></tr>
+      <tr><td>기약분수 찾기</td><td>왜 더 이상 약분되지 않을까?</td><td>해금 · 보스</td><td>분수 던전</td></tr>
+      <tr><td>스포츠 설명하기</td><td>처음 보는 사람도 설명만 보고 할 수 있을까?</td><td>튜토리얼 · 보스</td><td>학생 코치 가이드</td></tr>
+      <tr><td>졸업 프로젝트</td><td>우리 반을 무엇으로 기억하게 할까?</td><td>수집 · 건설</td><td>기억 박물관</td></tr>
+    </tbody>
+  </table></div>
 
-      <h3 style="margin-top:34px">기존 수업에 게임 구조를 얹으면</h3>
-      <p class="small">원래 과제의 목적은 유지하고, 탐색·해금·분기·보스·건설 같은 구조만 더한다. 게임을 새로 만드는 것보다 학생이 움직이는 방식을 바꾸는 데 초점을 둔다.</p>
-      <div class="project-grid">
-        <article class="project-card"><div class="from">학교 폭력 예방 규칙 만들기 → 학교 안전 퀘스트</div><h3>“우리 학교에서 실제로 지켜질 규칙은 무엇일까?”</h3><div class="project-q">교실·복도·운동장 상황 카드를 돌며 갈등 상황을 해결하고, 마지막에 학급 규칙을 공개한다.</div><dl><dt>게임 구조</dt><dd>scavenger hunt + 해금</dd><dt>도구</dt><dd>Goosechase / Genially / Padlet</dd><dt>AI 역할</dt><dd>상황 카드와 반대 의견 생성</dd><dt>학생 판단</dt><dd>실제로 지킬 수 있는 규칙인지, 어떤 예외가 있는지</dd><dt>결과물</dt><dd>규칙 카드 + 캠페인 영상 + 학교 안전맵</dd></dl></article>
-        <article class="project-card"><div class="from">올바른 우리말 영상 → 우리말 탐정단</div><h3>“학교에서 가장 자주 헷갈리는 말은 무엇일까?”</h3><div class="project-q">학교 안에서 실제 표현을 수집하고, 범주화한 뒤 짧은 영상과 게임으로 다시 돌려준다.</div><dl><dt>게임 구조</dt><dd>수집 + 분류 + 보스 퀴즈</dd><dt>도구</dt><dd>Padlet / Blooket / Canva·CapCut</dd><dt>AI 역할</dt><dd>헷갈리는 예문과 오답 후보 생성</dd><dt>학생 판단</dt><dd>근거가 되는 맞춤법 규칙 확인</dd><dt>결과물</dt><dd>우리말 쇼츠 + 학급 퀴즈</dd></dl></article>
-        <article class="project-card"><div class="from">왕가리 마타이 소개 영상 → 한 사람의 선택이 만든 변화</div><h3>“한 사람의 선택은 사회를 얼마나 바꿀 수 있을까?”</h3><div class="project-q">생애를 나열하는 영상 대신, 중요한 선택 장면을 지도와 분기 이야기로 만든다.</div><dl><dt>게임 구조</dt><dd>분기 + 선택</dd><dt>도구</dt><dd>Google Earth / ThingLink / Book Creator</dd><dt>AI 역할</dt><dd>인터뷰 질문·반대 관점 제시</dd><dt>학생 판단</dt><dd>어떤 선택이 왜 중요했는지 근거로 설명</dd><dt>결과물</dt><dd>인터랙티브 인물 지도 + 짧은 영상</dd></dl></article>
-        <article class="project-card"><div class="from">우리반 영화만들기 → 분기형 학급 영화</div><h3>“같은 사건에서 선택이 달라지면 이야기는 어떻게 달라질까?”</h3><div class="project-q">한 결말만 촬영하지 않고, 선택 지점 하나를 두고 두 개의 결말을 만든다.</div><dl><dt>게임 구조</dt><dd>분기 이야기</dd><dt>도구</dt><dd>ThingLink / Genially / 영상 편집</dd><dt>AI 역할</dt><dd>시나리오 결함 찾기·대사 피드백</dd><dt>학생 판단</dt><dd>인물의 선택이 개연성 있는지</dd><dt>결과물</dt><dd>선택형 학급 영화</dd></dl></article>
-        <article class="project-card"><div class="from">세계 여행상품 만들기 → 여행 스타트업 피치</div><h3>“우리 팀은 누구에게 어떤 여행을 팔 것인가?”</h3><div class="project-q">나라 소개가 아니라 고객, 예산, 이동, 일정, 위험 요소까지 고려한 상품을 만든다.</div><dl><dt>게임 구조</dt><dd>자원 제한 + 투자 피치</dd><dt>도구</dt><dd>Google Earth / Canva / Padlet</dd><dt>AI 역할</dt><dd>고객 페르소나·반대 질문 생성</dd><dt>학생 판단</dt><dd>비용·동선·매력 포인트의 균형</dd><dt>결과물</dt><dd>여행상품 카드 + 2분 투자 발표</dd></dl></article>
-        <article class="project-card"><div class="from">수학 기약 분수 찾기 → 분수 던전</div><h3>“왜 이 분수는 더 이상 약분되지 않을까?”</h3><div class="project-q">계산 문제를 순서대로 푸는 대신, 설명해야 문이 열리는 던전으로 만든다.</div><dl><dt>게임 구조</dt><dd>해금 + 보스</dd><dt>도구</dt><dd>Deck.Toys / Genially / Flippity</dd><dt>AI 역할</dt><dd>그럴듯한 오답·반례 생성</dd><dt>학생 판단</dt><dd>최대공약수와 약분 이유 설명</dd><dt>결과물</dt><dd>모둠이 직접 만든 분수 방탈출</dd></dl></article>
-        <article class="project-card"><div class="from">스포츠 설명하기 → 내가 만든 스포츠 튜토리얼</div><h3>“처음 보는 사람도 우리 설명만 보고 할 수 있을까?”</h3><div class="project-q">스포츠 이름과 규칙을 말하는 데서 끝내지 않고, 초보자에게 실제로 가르치는 설명 자료를 만든다.</div><dl><dt>게임 구조</dt><dd>레벨업 + 코치 역할</dd><dt>도구</dt><dd>ThingLink / Canva / 영상</dd><dt>AI 역할</dt><dd>초보자가 물을 법한 질문 생성</dd><dt>학생 판단</dt><dd>설명이 실제 행동으로 이어지는지</dd><dt>결과물</dt><dd>1분 튜토리얼 + 규칙 카드</dd></dl></article>
-        <article class="project-card"><div class="from">졸업 컵·졸업 축하·응원 영상 → 우리반 기억 박물관</div><h3>“우리 반을 무엇으로 기억하게 할까?”</h3><div class="project-q">개별 결과물을 하나의 디지털 전시로 묶고, 관람자가 기억을 선택해서 열어 보게 한다.</div><dl><dt>게임 구조</dt><dd>수집 + 전시 + 탐색</dd><dt>도구</dt><dd>ThingLink / Padlet / Book Creator</dd><dt>AI 역할</dt><dd>인터뷰 질문·전시 제목 후보 생성</dd><dt>학생 판단</dt><dd>공개해도 되는 사진·문장과 개인 기억의 경계</dd><dt>결과물</dt><dd>학급 디지털 박물관</dd></dl></article>
-      </div>
+  <h3 style="margin-top:30px">도구 연결</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>구조</th><th>도구</th><th>활용</th></tr></thead>
+    <tbody>
+      <tr><td>조합</td><td>Little Alchemy 2</td><td>조합 규칙 참고 · 가설과 발견</td></tr>
+      <tr><td>해금·경로</td><td>Deck.Toys</td><td>순차 미션 · 잠금 · 선택 경로</td></tr>
+      <tr><td>방탈출·분기</td><td>Genially</td><td>비밀코드 · 제한시간 · 선택형 장면</td></tr>
+      <tr><td>탐색</td><td>GooseChase</td><td>교실·학교·지역 미션</td></tr>
+      <tr><td>가상전시</td><td>ThingLink</td><td>이미지·360° 장면에 자료·질문 배치</td></tr>
+      <tr><td>건설</td><td>Minecraft Education</td><td>공간 설계 · 협업 · 문제 해결</td></tr>
+      <tr><td>간단한 게임</td><td>Flippity · Blooket</td><td>복습 · 보상 · 랜덤 요소</td></tr>
+    </tbody>
+  </table></div>
 
-      <h3 style="margin-top:32px">프로젝트 수업이 되려면</h3>
-      <div class="tablewrap"><table><thead><tr><th>확인할 것</th><th>수업에서 바꾸면</th></tr></thead><tbody>
-        <tr><td><b>답이 한 줄로 끝나지 않는 질문</b></td><td>“학교폭력의 정의는?”보다 “우리 학교에서 실제로 지켜질 규칙은 무엇인가?”</td></tr>
-        <tr><td><b>며칠 동안 이어지는 탐색</b></td><td>자료 찾기 → 인터뷰/관찰 → 초안 → 피드백 → 수정</td></tr>
-        <tr><td><b>학생 선택</b></td><td>주제, 역할, 도구, 표현 방식을 일부 선택</td></tr>
-        <tr><td><b>중간 비평과 수정</b></td><td>완성 직전 한 번 확인하는 것이 아니라 중간 산출물을 서로 평가</td></tr>
-        <tr><td><b>실제 관객</b></td><td>학급 안 제출이 아니라 학교 게시, 학부모, 다른 학년, 공모전, 온라인 전시</td></tr>
-      </tbody></table></div>
-      <p class="small" style="margin-top:10px"><a href="https://www.pblworks.org/gold-standard/pbl-project-design" target="_blank" rel="noopener">PBLWorks의 프로젝트 설계 요소 보기 ↗</a></p>
-
-      <div class="builder" id="project-builder">
-        <div class="label">프로젝트 변환기</div>
-        <h3>기존 활동 하나를 프로젝트로 바꿔 보기</h3>
-        <div class="formgrid">
-          <label>기존 활동<select id="projBase"><option>학교폭력 예방 규칙 만들기</option><option>올바른 우리말 영상</option><option>우리반 영화 만들기</option><option>세계 여행상품 만들기</option><option>수학 기약분수 찾기</option><option>스포츠 설명하기</option><option>졸업 콘텐츠</option></select></label>
-          <label>게임 구조<select id="projGame"><option>조합(Crafting)</option><option>해금(Unlock)</option><option>분기(Branching)</option><option>보스 문제(Boss)</option><option>탐색(Scavenger)</option><option>건설(Build)</option></select></label>
-          <label>공개 결과물<select id="projProduct"><option>짧은 영상</option><option>디지털 전시</option><option>게임/방탈출</option><option>웹페이지</option><option>발표·피치</option><option>체험 부스</option></select></label>
-          <label>AI 역할<select id="projAI"><option>아이디어 반대자</option><option>질문 생성기</option><option>오답/반례 생성기</option><option>자료 요약 보조</option><option>시나리오 비평가</option><option>코드 초안 작성</option></select></label>
-          <label>학생이 직접 할 일<input id="projStudent" value="자료를 고르고, 결과를 검증하고, 수정 이유를 설명하기"></label>
-          <label>관객<input id="projAudience" value="다른 학급 또는 학부모"></label>
-        </div>
-        <button class="btn primary" style="margin-top:10px" onclick="buildProject()">프로젝트 초안 만들기</button>
-        <pre class="canvas-output" id="projectResult"></pre>
-      </div>
-
-      <div class="callout"><b>프로젝트는 결과물 하나를 만드는 활동이 아니다.</b><br><b>질문 만들기 → 자료 찾기 → 선택하기 → 초안 만들기 → 피드백 → 수정 → 실제 관객에게 공개</b>까지 이어질 때 프로젝트가 된다.</div>
-    </section>
-
+  <div class="builder" id="project-builder">
+    <div class="label">프로젝트 조합</div>
+    <div class="formgrid">
+      <label>출발 과제<select id="projBase"><option>학교 폭력 예방 규칙 만들기</option><option>올바른 우리말 영상</option><option>왕가리 마타이 소개 영상</option><option>우리반 영화 만들기</option><option>세계 여행상품 만들기</option><option>수학 기약분수 찾기</option><option>스포츠 설명하기</option><option>졸업 프로젝트</option></select></label>
+      <label>게임 구조<select id="projGame"><option>조합</option><option>해금</option><option>분기</option><option>보스 문제</option><option>탐색</option><option>건설</option></select></label>
+      <label>결과물<select id="projProduct"><option>영상</option><option>게임</option><option>웹페이지</option><option>디지털 전시</option><option>발표·피치</option><option>체험 부스</option></select></label>
+      <label>AI 역할<select id="projAI"><option>아이디어 반대자</option><option>질문 생성</option><option>오답·반례 생성</option><option>자료 요약</option><option>시나리오 비평</option><option>코드 초안</option></select></label>
+      <label>학생이 직접 할 일<input id="projStudent" value="자료 조사, 선택, 검증, 수정"></label>
+      <label>관객<input id="projAudience" value="친구와 다른 학년 학생"></label>
+    </div>
+    <button class="btn primary" style="margin-top:10px" onclick="buildProject()">조합 보기</button>
+    <pre class="canvas-output" id="projectResult"></pre>
+  </div>
+</section>
 <section id="google">
-  <div class="eyebrow">1인 1기기 + Google 계정</div>
-  <h2>1인 1기기라면 Google을 기본 작업대로</h2>
-  <p class="lead"><b>Classroom에서 배부 → Drive에서 자료 관리 → Docs·Slides로 협업 → Forms로 체크 → Sites로 공개.</b> 이 흐름을 기본으로 두면 외부 앱이 많아져도 학생이 길을 잃지 않는다. 새 도구는 필요한 순간에만 붙인다.</p>
+  <div class="eyebrow">1인 1기기 + Google</div>
+  <h2>한 곳에서 배부 · 제작 · 확인 · 공개</h2>
   <div class="googleflow">
-    <span>Classroom<br><small>과제 배부</small></span><i>→</i>
-    <span>Drive<br><small>자료·템플릿</small></span><i>→</i>
+    <span>Classroom<br><small>배부</small></span><i>→</i>
+    <span>Drive<br><small>자료</small></span><i>→</i>
     <span>Docs / Slides<br><small>공동 제작</small></span><i>→</i>
-    <span>Forms<br><small>퀘스트·체크포인트</small></span><i>→</i>
-    <span>Gemini / NotebookLM<br><small>질문·자료 읽기</small></span><i>→</i>
-    <span>Sites<br><small>학급 전시</small></span>
+    <span>Forms<br><small>체크</small></span><i>→</i>
+    <span>Gemini / NotebookLM<br><small>질문·근거</small></span><i>→</i>
+    <span>Sites<br><small>공개</small></span>
   </div>
   <div class="grid3">
-    <div class="card"><h3>Classroom</h3><p>모든 링크와 제출 위치를 여기 한 곳에 둡니다. 외부 사이트가 많아져도 학생이 돌아오는 홈은 하나로 유지합니다.</p></div>
-    <div class="card"><h3>Drive</h3><p>모둠별 폴더, 원자료, 초안, 최종본을 분리합니다. 프로젝트 수업에서는 버전이 곧 학습 과정입니다.</p></div>
-    <div class="card"><h3>Docs·Slides</h3><p>공동 시나리오, 조사표, 여행상품, 토론 자료, 갤러리 설명문처럼 여러 학생이 동시에 고치기 좋습니다.</p></div>
-    <div class="card"><h3>Forms</h3><p>분기형 미션, 자기점검, 동료평가, 보스 퀴즈, 프로젝트 체크포인트로 씁니다.</p></div>
-    <div class="card"><h3>Gemini·NotebookLM</h3><p>Gemini는 아이디어와 초안, NotebookLM은 교사가 넣은 자료를 바탕으로 질문·근거 찾기에 유용합니다. 학교의 관리 설정과 사용 가능 연령·기능은 확인합니다.</p></div>
-    <div class="card"><h3>Sites</h3><p>영화, 영상, 공모전, 여행상품, 졸업 콘텐츠를 한 학기 또는 한 학년의 공개 전시로 묶기 좋습니다.</p></div>
+    <div class="card"><h3>Classroom</h3><ul class="compact"><li>과제·링크 한곳에</li><li>마감·제출 상태 확인</li><li>외부 사이트 출발점</li></ul></div>
+    <div class="card"><h3>Drive</h3><ul class="compact"><li>원자료 / 초안 / 최종본 분리</li><li>모둠별 폴더</li><li>중간본 보관</li></ul></div>
+    <div class="card"><h3>Docs·Slides</h3><ul class="compact"><li>공동 조사</li><li>시나리오·여행상품·토론자료</li><li>댓글·제안 모드</li></ul></div>
+    <div class="card"><h3>Forms</h3><ul class="compact"><li>체크포인트</li><li>퀴즈·분기</li><li>자기·동료평가</li></ul></div>
+    <div class="card"><h3>Gemini·NotebookLM</h3><ul class="compact"><li>아이디어·질문</li><li>교사 제공 자료 근거 찾기</li><li>원문과 대조 필수</li></ul></div>
+    <div class="card"><h3>Sites</h3><ul class="compact"><li>학급·학년 전시</li><li>영상·영화·공모전 모음</li><li>프로젝트 아카이브</li></ul></div>
   </div>
-  <h3 style="margin-top:28px">외부 도구를 붙이는 기준</h3>
+  <h3 style="margin-top:28px">외부 도구 붙이기</h3>
   <div class="tablewrap"><table>
-    <thead><tr><th>필요</th><th>기본 Google 도구</th><th>더 재미있게 만들 때</th></tr></thead>
+    <thead><tr><th>필요</th><th>Google 안에서</th><th>확장 도구</th></tr></thead>
     <tbody>
-      <tr><td>퀘스트·분기</td><td>Forms</td><td>Deck.Toys, Genially</td></tr>
+      <tr><td>퀘스트·분기</td><td>Forms</td><td>Deck.Toys · Genially</td></tr>
       <tr><td>지도·지역</td><td>Google Earth</td><td>ThingLink</td></tr>
-      <tr><td>작품 게시</td><td>Slides, Sites</td><td>Padlet</td></tr>
-      <tr><td>영상</td><td>Slides, Vids(사용 가능 시)</td><td>Canva, CapCut</td></tr>
-      <tr><td>게임</td><td>Forms 퀴즈</td><td>Blooket, Baamboozle, Flippity</td></tr>
-      <tr><td>AI 체험</td><td>Gemini</td><td>Teachable Machine, Scratch, 생성형 웹앱</td></tr>
+      <tr><td>작품 게시</td><td>Slides · Sites</td><td>Padlet</td></tr>
+      <tr><td>영상</td><td>Slides · Vids(사용 가능 시)</td><td>Canva · CapCut</td></tr>
+      <tr><td>게임</td><td>Forms 퀴즈</td><td>Blooket · Baamboozle · Flippity</td></tr>
+      <tr><td>AI 체험</td><td>Gemini</td><td>Teachable Machine · Scratch · 웹앱</td></tr>
     </tbody>
   </table></div>
   <div class="linkrow">
-    <a href="https://classroom.google.com/" target="_blank" rel="noopener">Google Classroom ↗</a>
-    <a href="https://drive.google.com/" target="_blank" rel="noopener">Google Drive ↗</a>
-    <a href="https://forms.google.com/" target="_blank" rel="noopener">Google Forms ↗</a>
-    <a href="https://sites.google.com/" target="_blank" rel="noopener">Google Sites ↗</a>
-    <a href="https://earth.google.com/web/" target="_blank" rel="noopener">Google Earth ↗</a>
-    <a href="https://notebooklm.google.com/" target="_blank" rel="noopener">NotebookLM ↗</a>
+    <a href="https://classroom.google.com/" target="_blank" rel="noopener">Classroom ↗</a><a href="https://drive.google.com/" target="_blank" rel="noopener">Drive ↗</a><a href="https://forms.google.com/" target="_blank" rel="noopener">Forms ↗</a><a href="https://sites.google.com/" target="_blank" rel="noopener">Sites ↗</a><a href="https://earth.google.com/web/" target="_blank" rel="noopener">Earth ↗</a><a href="https://notebooklm.google.com/" target="_blank" rel="noopener">NotebookLM ↗</a>
   </div>
 </section>
-
 <section id="toolbox">
       <div class="eyebrow">도구 꾸러미</div>
       <h2>수업에 재밌게 얹을 수 있는 사이트들</h2>
-      <p class="lead">게임, 언어 놀이, AI 체험, 수학·과학, 음악, 만들기 사이트를 한곳에 모았습니다. <b>강추 / 좋음 / 조건부</b>로 표시했으니 목적에 맞는 것만 골라 씁니다.</p>
+      <ul class="brief">
+    <li>강추 · 좋음 · 조건부 · 틈새 활용 표시</li>
+    <li>교과 목표에 맞는 2~3개만 선택</li>
+    <li>Google Classroom을 출발점으로 링크 배부</li>
+    <li>광고·로그인·연령·카메라 사용은 교사 먼저 확인</li>
+  </ul>
       <div class="tooltop">
         <input id="toolSearch" placeholder="게임, 저학년, 수학, 과학, 만들기, AI 등으로 검색">
         <button class="btn" onclick="clearSearch()">검색 지우기</button>
@@ -613,280 +618,288 @@ main{padding:0 34px 90px} section{max-width:1120px;margin:0 auto;padding:58px 0;
         <button data-filter="music">음악</button>
         <button data-filter="teacher">교사용</button>
       </div>
-      <div class="callout"><b>선정에서 뺀 것도 있습니다.</b><br>교과 연결이 약하거나, 개인정보·심리검사처럼 초등 수업에서 얻는 것보다 위험이 큰 사이트는 넣지 않았습니다. 재미만 있는 사이트는 “틈새 활용”로 낮춰 두었습니다.</div>
+      <div class="callout"><b>선정에서 뺀 것도 </b><br>교과 연결이 약하거나, 개인정보·심리검사처럼 초등 수업에서 얻는 것보다 위험이 큰 사이트는 넣지 않았습니다. 재미만 있는 사이트는 “틈새 활용”로 낮춰 두었습니다.</div>
       <div class="toolgrid" id="toolGrid">
 
         <a class="toolcard" data-tags="teacher 평가 official 교사용 kice" href="https://stas.moe.go.kr/" target="_blank" rel="noopener">
           <div class="value a">강추 · 교사용</div><div class="kind">평가</div><h3>KICE 학생평가지원포털</h3>
-          <p>성취기준, 평가도구, 학생평가 자료를 찾을 때 가장 먼저 볼 만한 공식 포털이다.</p>
+          <div class="toolbullets">성취기준, 평가도구, 학생평가 자료를 찾을 때 가장 먼저 볼 만한 공식 포털이다.</div>
           <div class="tip">써볼 때: 수행평가·문항 설계 전</div><div class="go">열기 ↗</div>
         </a>
         <a class="toolcard" data-tags="teacher game present quiz 참여 class tool 클래스툴" href="https://ctool.co.kr/" target="_blank" rel="noopener">
           <div class="value a">강추</div><div class="kind">참여·수업 운영</div><h3>ClassTool</h3>
-          <p>실시간 상호작용 수업과 빠른 응답 수집에 쓰기 좋다. 별도 결과물 제작보다 수업 중 반응을 끌어낼 때 강하다.</p>
+          <div class="toolbullets">실시간 상호작용 수업과 빠른 응답 수집에 쓰기 좋다. 별도 결과물 제작보다 수업 중 반응을 끌어낼 때 강하다.</div>
           <div class="tip">써볼 때: 즉석 질문·참여 확인</div><div class="go">열기 ↗</div>
         </a>
         <a class="toolcard" data-tags="language 영어 classcard 단어 speaking teacher" href="https://www.classcard.net/" target="_blank" rel="noopener">
           <div class="value b">좋음 · 영어</div><div class="kind">영어</div><h3>ClassCard</h3>
-          <p>단어·문장·말하기·퀴즈 자료가 풍부하다. 영어 전담이나 어휘 반복 학습에는 여전히 쓸모가 크다.</p>
+          <div class="toolbullets">단어·문장·말하기·퀴즈 자료가 풍부하다. 영어 전담이나 어휘 반복 학습에는 여전히 쓸모가 크다.</div>
           <div class="toolnote">무료 범위가 제한적이므로 학급 전체 상시 운영은 요금 확인.</div><div class="go">열기 ↗</div>
         </a>
 
         <a class="toolcard" data-tags="language game 국어 semantic ai 꼬맨틀 유사도" href="https://semantle-ko.newsjel.ly/" target="_blank" rel="noopener">
           <div class="value a">강추 · 국어/AI</div><div class="kind">언어 놀이</div><h3>꼬맨틀</h3>
-          <p>정답 낱말과의 의미 유사도를 보며 추리한다. 어휘 관계와 ‘AI가 의미를 거리로 다루는 방식’을 같이 이야기하기 좋다.</p>
+          <div class="toolbullets">정답 낱말과의 의미 유사도를 보며 추리한다. 어휘 관계와 ‘AI가 의미를 거리로 다루는 방식’을 같이 이야기하기 좋다.</div>
           <div class="tip">써볼 때: 어휘망·AI 의미 공간</div><div class="go">열기 ↗</div>
         </a>
         <a class="toolcard" data-tags="language game 국어 wordle 꼬들" href="https://kordle.kr/" target="_blank" rel="noopener">
           <div class="value b">좋음</div><div class="kind">언어 놀이</div><h3>꼬들</h3>
-          <p>한글 낱말을 추리하는 짧은 게임. 철자와 어휘를 놀이처럼 다루기 좋다.</p>
+          <div class="toolbullets">한글 낱말을 추리하는 짧은 게임. 철자와 어휘를 놀이처럼 다루기 좋다.</div>
           <div class="tip">써볼 때: 아침활동·수업 도입</div><div class="go">열기 ↗</div>
         </a>
         <a class="toolcard" data-tags="language game 국어 낱말야구 쌍근" href="https://ssaangn.com/" target="_blank" rel="noopener">
           <div class="value b">좋음</div><div class="kind">언어 놀이</div><h3>쌍근</h3>
-          <p>낱말 야구 방식으로 단어를 좁혀 간다. 추론 과정과 어휘 전략을 말하게 하면 수업성이 살아난다.</p>
+          <div class="toolbullets">낱말 야구 방식으로 단어를 좁혀 간다. 추론 과정과 어휘 전략을 말하게 하면 수업성이 살아난다.</div>
           <div class="tip">써볼 때: 추론 말하기</div><div class="go">열기 ↗</div>
         </a>
         <a class="toolcard" data-tags="language 국어 문해력 맞춤법 유의어 낱말" href="https://natmal.com/" target="_blank" rel="noopener">
           <div class="value b">좋음</div><div class="kind">국어</div><h3>낱말</h3>
-          <p>맞춤법·유의어·문해력·어휘 퍼즐을 한곳에서 다룬다. 국어 수업 보조재로 쓰기 편하다.</p>
+          <div class="toolbullets">맞춤법·유의어·문해력·어휘 퍼즐을 한곳에서 다룬다. 국어 수업 보조재로 쓰기 편하다.</div>
           <div class="tip">써볼 때: 어휘·맞춤법 보충</div><div class="go">열기 ↗</div>
         </a>
         <a class="toolcard" data-tags="language ai word2vec 국어 semantic vector" href="https://word2vec.kr/search/" target="_blank" rel="noopener">
           <div class="value a">강추 · AI 개념</div><div class="kind">언어·AI</div><h3>Korean Word2Vec</h3>
-          <p>한국어 단어를 벡터로 다루고 의미 연산을 해볼 수 있다. 생성형 AI 이전의 언어모델 개념을 설명하기에 매우 좋다.</p>
+          <div class="toolbullets">한국어 단어를 벡터로 다루고 의미 연산을 해볼 수 있다. 생성형 AI 이전의 언어모델 개념을 설명하기에 매우 좋다.</div>
           <div class="tip">써볼 때: ‘단어를 숫자로 바꾼다’ 체험</div><div class="go">열기 ↗</div>
         </a>
         <a class="toolcard" data-tags="language english ai semantic game semantris" href="https://research.google.com/semantris/" target="_blank" rel="noopener">
           <div class="value b">좋음 · 영어/AI</div><div class="kind">언어·AI</div><h3>Semantris</h3>
-          <p>단어 의미 유사도를 게임으로 체험한다. 영어 수업 또는 의미 임베딩 개념을 가볍게 맛보기에 좋다.</p>
+          <div class="toolbullets">단어 의미 유사도를 게임으로 체험한다. 영어 수업 또는 의미 임베딩 개념을 가볍게 맛보기에 좋다.</div>
           <div class="tip">써볼 때: 5~6학년 영어·AI</div><div class="go">열기 ↗</div>
         </a>
         <a class="toolcard" data-tags="language 국어 난독화 읽기 인지" href="https://airbnbfy.hanmesoft.com/" target="_blank" rel="noopener">
           <div class="value c">한 번쯤</div><div class="kind">국어·인지</div><h3>한글 난독화</h3>
-          <p>글자의 일부가 흐트러져도 문맥으로 읽는 경험을 준다. 짧은 도입 활동으로는 재미있지만 핵심 수업도구로 둘 필요는 없다.</p>
+          <div class="toolbullets">글자의 일부가 흐트러져도 문맥으로 읽는 경험을 준다. 짧은 도입 활동으로는 재미있지만 핵심 수업도구로 둘 필요는 없다.</div>
           <div class="tip">써볼 때: 읽기와 맥락 이야기</div><div class="go">열기 ↗</div>
         </a>
 
         <a class="toolcard" data-tags="create art 기억 관찰 logos neal" href="https://neal.fun/logos-from-memory/" target="_blank" rel="noopener">
           <div class="value a">강추 · 짧은 활동</div><div class="kind">미술·시각 기억</div><h3>Draw Logos From Memory</h3>
-          <p>익숙하다고 생각한 로고를 기억만으로 그린다. 보는 것과 기억하는 것의 차이를 즉시 체감한다.</p>
+          <div class="toolbullets">익숙하다고 생각한 로고를 기억만으로 그린다. 보는 것과 기억하는 것의 차이를 즉시 체감한다.</div>
           <div class="tip">써볼 때: 관찰·시각기억·브랜드 디자인</div><div class="go">열기 ↗</div>
         </a>
         <a class="toolcard" data-tags="create art design 아이폰 neal project" href="https://neal.fun/design-the-next-iphone/" target="_blank" rel="noopener">
           <div class="value a">강추 · 디자인</div><div class="kind">디자인</div><h3>Design the Next iPhone</h3>
-          <p>기능을 덧붙이며 제품을 설계한다. 기술·미술·실과에서 ‘필요한 기능과 과잉 기능’을 토론하기 좋다.</p>
+          <div class="toolbullets">기능을 덧붙이며 제품을 설계한다. 기술·미술·실과에서 ‘필요한 기능과 과잉 기능’을 토론하기 좋다.</div>
           <div class="tip">써볼 때: 제품 디자인 프로젝트</div><div class="go">열기 ↗</div>
         </a>
         <a class="toolcard" data-tags="create art jigsaw 퍼즐 이미지" href="https://www.jigsawexplorer.com/" target="_blank" rel="noopener">
           <div class="value b">좋음</div><div class="kind">이미지·퍼즐</div><h3>Jigsaw Explorer</h3>
-          <p>이미지를 직소 퍼즐로 바꿔 볼 수 있다. 작품 감상이나 사진 자료의 일부를 먼저 보게 하는 도입 활동에 잘 맞는다.</p>
+          <div class="toolbullets">이미지를 직소 퍼즐로 바꿔 볼 수 있다. 작품 감상이나 사진 자료의 일부를 먼저 보게 하는 도입 활동에 잘 맞는다.</div>
           <div class="tip">써볼 때: 작품·지도·사진 도입</div><div class="go">열기 ↗</div>
         </a>
         <a class="toolcard" data-tags="game create art drawing multiplayer skribbl" href="https://skribbl.io/" target="_blank" rel="noopener">
           <div class="value c">조건부</div><div class="kind">그림·게임</div><h3>skribbl.io</h3>
-          <p>그림을 그리고 맞히는 멀티플레이 게임. 어휘·영어 표현에는 재밌지만 공개방보다 교사가 방을 직접 만들어 쓰는 편이 낫다.</p>
+          <div class="toolbullets">그림을 그리고 맞히는 멀티플레이 게임. 어휘·영어 표현에는 재밌지만 공개방보다 교사가 방을 직접 만들어 쓰는 편이 낫다.</div>
           <div class="tip">써볼 때: 비공개방·짧은 어휘게임</div><div class="go">열기 ↗</div>
         </a>
         <a class="toolcard" data-tags="ai create art quickdraw drawing machine learning" href="https://quickdraw.withgoogle.com/" target="_blank" rel="noopener">
           <div class="value a">강추 · AI</div><div class="kind">AI 체험</div><h3>Quick, Draw!</h3>
-          <p>AI가 그림을 얼마나 빨리 알아보는지 체험한다. 데이터·분류·오인식 이야기를 초등학생도 쉽게 시작할 수 있다.</p>
+          <div class="toolbullets">AI가 그림을 얼마나 빨리 알아보는지 체험한다. 데이터·분류·오인식 이야기를 초등학생도 쉽게 시작할 수 있다.</div>
           <div class="tip">써볼 때: ‘AI는 무엇을 보고 맞힐까?’</div><div class="go">열기 ↗</div>
         </a>
         <a class="toolcard" data-tags="ai create art autodraw 저학년" href="https://www.autodraw.com/" target="_blank" rel="noopener">
           <div class="value b">좋음 · 저학년</div><div class="kind">그리기·AI</div><h3>AutoDraw</h3>
-          <p>대충 그린 선을 아이콘 후보로 바꿔 준다. 마우스나 터치 조작이 익숙하지 않은 학생도 결과를 만들기 쉽다.</p>
+          <div class="toolbullets">대충 그린 선을 아이콘 후보로 바꿔 준다. 마우스나 터치 조작이 익숙하지 않은 학생도 결과를 만들기 쉽다.</div>
           <div class="tip">써볼 때: 저학년 포스터·픽토그램</div><div class="go">열기 ↗</div>
         </a>
         <a class="toolcard" data-tags="create present design miricanvas 한국어" href="https://www.miricanvas.com/" target="_blank" rel="noopener">
           <div class="value a">강추 · 한국어</div><div class="kind">만들기</div><h3>미리캔버스</h3>
-          <p>한국어 템플릿과 학교 현장 친화성이 좋다. Canva와 겹치지만 국내 자료 제작에서는 여전히 선택 가치가 있다.</p>
+          <div class="toolbullets">한국어 템플릿과 학교 현장 친화성이 좋다. Canva와 겹치지만 국내 자료 제작에서는 여전히 선택 가치가 있다.</div>
           <div class="tip">써볼 때: 포스터·카드뉴스·발표</div><div class="go">열기 ↗</div>
         </a>
 
         <a class="toolcard" data-tags="ethics social ai moral machine 토론" href="https://www.moralmachine.net/hl/kr" target="_blank" rel="noopener">
           <div class="value a">강추 · 고학년</div><div class="kind">AI 윤리</div><h3>Moral Machine</h3>
-          <p>자율주행차의 선택 상황을 통해 알고리즘과 가치판단을 토론한다. ‘정답 찾기’보다 서로 다른 기준을 드러내는 활동으로 써야 한다.</p>
+          <div class="toolbullets">자율주행차의 선택 상황을 통해 알고리즘과 가치판단을 토론한다. ‘정답 찾기’보다 서로 다른 기준을 드러내는 활동으로 써야 한다.</div>
           <div class="tip">써볼 때: 5~6학년 토론·AI 윤리</div><div class="go">열기 ↗</div>
         </a>
         <a class="toolcard" data-tags="ethics social game trust 협력 게임이론" href="https://osori.github.io/trust-ko/" target="_blank" rel="noopener">
           <div class="value a">강추</div><div class="kind">사회·협력</div><h3>신뢰의 진화</h3>
-          <p>협력과 배신이 반복될 때 전략이 어떻게 달라지는지 직접 체험한다. 사회·도덕·학급공동체 수업과 연결하기 좋다.</p>
+          <div class="toolbullets">협력과 배신이 반복될 때 전략이 어떻게 달라지는지 직접 체험한다. 사회·도덕·학급공동체 수업과 연결하기 좋다.</div>
           <div class="tip">써볼 때: 신뢰·협력·게임이론</div><div class="go">열기 ↗</div>
         </a>
         <a class="toolcard" data-tags="ethics social media game 미디어 폭력 고학년" href="https://game.hyeon.me/wbwwb/" target="_blank" rel="noopener">
           <div class="value c">교사 먼저 확인</div><div class="kind">미디어 리터러시</div><h3>We Become What We Behold</h3>
-          <p>미디어가 갈등과 극단적 장면을 확대하는 과정을 짧은 게임으로 보여 준다. 내용이 점차 거칠어지므로 고학년에서도 교사 시연 중심이 안전하다.</p>
+          <div class="toolbullets">미디어가 갈등과 극단적 장면을 확대하는 과정을 짧은 게임으로 보여 준다. 내용이 점차 거칠어지므로 고학년에서도 교사 시연 중심이 안전하다.</div>
           <div class="tip">써볼 때: 미디어가 무엇을 선택해 보여주는가</div><div class="go">열기 ↗</div>
         </a>
 
         <a class="toolcard" data-tags="math teacher 수학 ai 연산 초등 매일수학" href="https://dmath.i-scream.co.kr/" target="_blank" rel="noopener">
           <div class="value a">강추 · 반복학습</div><div class="kind">수학</div><h3>i-Scream AI 매일수학</h3>
-          <p>초등 교과 연산 문제 생성과 반복학습에 강하다. 혼합 연산과 분석 리포트가 있어 개별 연습용으로 좋다.</p>
+          <div class="toolbullets">초등 교과 연산 문제 생성과 반복학습에 강하다. 혼합 연산과 분석 리포트가 있어 개별 연습용으로 좋다.</div>
           <div class="toolnote">최종정답 중심 채점이어서 풀이과정 평가를 대신하진 못한다.</div><div class="go">열기 ↗</div>
         </a>
         <a class="toolcard" data-tags="math ai 초등 똑똑수학 탐험대" href="https://www.toctocmath.kr/" target="_blank" rel="noopener">
           <div class="value a">강추 · 초등수학</div><div class="kind">수학</div><h3>똑똑! 수학탐험대</h3>
-          <p>초등수학 AI 기반 학습 지원 시스템. 교과 연계성이 높아 게임 사이트보다 실제 수업·보충학습에 쓰기 쉽다.</p>
+          <div class="toolbullets">초등수학 AI 기반 학습 지원 시스템. 교과 연계성이 높아 게임 사이트보다 실제 수업·보충학습에 쓰기 쉽다.</div>
           <div class="tip">써볼 때: 초등수학 개별화 연습</div><div class="go">열기 ↗</div>
         </a>
         <a class="toolcard" data-tags="math game logic bridge puzzle 규칙성" href="https://ko.puzzle-bridges.com/" target="_blank" rel="noopener">
           <div class="value a">강추 · 사고력</div><div class="kind">논리·수학</div><h3>Bridges</h3>
-          <p>규칙에 따라 섬을 다리로 연결하는 논리 퍼즐. 연산 연습이 아니라 조건 추론과 계획 세우기에 좋다.</p>
+          <div class="toolbullets">규칙에 따라 섬을 다리로 연결하는 논리 퍼즐. 연산 연습이 아니라 조건 추론과 계획 세우기에 좋다.</div>
           <div class="tip">써볼 때: 아침수학·논리적 사고</div><div class="go">열기 ↗</div>
         </a>
         <a class="toolcard" data-tags="math game ebs 초등 공식 교육" href="https://www.ebsmath.co.kr/" target="_blank" rel="noopener">
           <div class="value a">강추 · 교과연계</div><div class="kind">수학</div><h3>EBSMath</h3>
-          <p>초3~초6 교과 콘텐츠와 게임이 꾸준히 업데이트된다. 펜토미노, 쌓기나무, 연산 게임처럼 단원에 바로 붙일 자료가 많다.</p>
+          <div class="toolbullets">초3~초6 교과 콘텐츠와 게임이 꾸준히 업데이트된다. 펜토미노, 쌓기나무, 연산 게임처럼 단원에 바로 붙일 자료가 많다.</div>
           <div class="tip">써볼 때: 단원별 게임·도형 퍼즐</div><div class="go">열기 ↗</div>
         </a>
 
         <a class="toolcard" data-tags="science scale space universe 비교 크기" href="https://scaleofuniverse.com/" target="_blank" rel="noopener">
           <div class="value a">강추 · 과학</div><div class="kind">과학</div><h3>Scale of the Universe</h3>
-          <p>아주 작은 것부터 우주 규모까지 크기를 연속적으로 비교한다. ‘크다/작다’가 아니라 수량 감각과 규모를 체감하게 한다.</p>
+          <div class="toolbullets">아주 작은 것부터 우주 규모까지 크기를 연속적으로 비교한다. ‘크다/작다’가 아니라 수량 감각과 규모를 체감하게 한다.</div>
           <div class="tip">써볼 때: 크기·단위·우주</div><div class="go">열기 ↗</div>
         </a>
         <a class="toolcard" data-tags="science space neal fun 우주 크기" href="https://neal.fun/size-of-space/" target="_blank" rel="noopener">
           <div class="value a">강추 · 시각화</div><div class="kind">과학</div><h3>The Size of Space</h3>
-          <p>우주의 천체 크기를 감각적으로 넘겨 보며 비교한다. 자료 설명보다 시각적 규모감을 주는 데 강하다.</p>
+          <div class="toolbullets">우주의 천체 크기를 감각적으로 넘겨 보며 비교한다. 자료 설명보다 시각적 규모감을 주는 데 강하다.</div>
           <div class="tip">써볼 때: 우주 단원 도입·마무리</div><div class="go">열기 ↗</div>
         </a>
 
         <a class="toolcard" data-tags="music create learning ableton 작곡" href="https://learningmusic.ableton.com/ko/" target="_blank" rel="noopener">
           <div class="value a">강추 · 음악</div><div class="kind">음악</div><h3>Ableton Learning Music</h3>
-          <p>비트·음정·코드·베이스라인을 직접 조작하면서 작곡 원리를 배운다. 설명보다 ‘해보면서 듣는’ 구조가 좋다.</p>
+          <div class="toolbullets">비트·음정·코드·베이스라인을 직접 조작하면서 작곡 원리를 배운다. 설명보다 ‘해보면서 듣는’ 구조가 좋다.</div>
           <div class="tip">써볼 때: 리듬·작곡·반복 패턴</div><div class="go">열기 ↗</div>
         </a>
         <a class="toolcard" data-tags="music ai gesture camera orchestra semiconductor" href="https://semiconductor.withgoogle.com/" target="_blank" rel="noopener">
           <div class="value b">좋음 · 시연</div><div class="kind">음악·AI</div><h3>Semi-Conductor</h3>
-          <p>몸짓으로 오케스트라를 지휘하는 실험. 음악의 빠르기·강약과 사람-컴퓨터 상호작용을 한 번에 보여 준다.</p>
+          <div class="toolbullets">몸짓으로 오케스트라를 지휘하는 실험. 음악의 빠르기·강약과 사람-컴퓨터 상호작용을 한 번에 보여 준다.</div>
           <div class="toolnote">카메라 사용 환경은 교사가 먼저 확인.</div><div class="go">열기 ↗</div>
         </a>
         <a class="toolcard" data-tags="music ai bach doodle machine learning" href="https://doodles.google/doodle/celebrating-johann-sebastian-bach/" target="_blank" rel="noopener">
           <div class="value a">강추 · AI 음악</div><div class="kind">음악·AI</div><h3>Bach AI Doodle</h3>
-          <p>짧은 멜로디를 만들면 머신러닝이 바흐풍으로 화성을 붙인다. 학습데이터와 ‘스타일을 배운다’는 말을 설명하기 좋다.</p>
+          <div class="toolbullets">짧은 멜로디를 만들면 머신러닝이 바흐풍으로 화성을 붙인다. 학습데이터와 ‘스타일을 배운다’는 말을 설명하기 좋다.</div>
           <div class="tip">써볼 때: 작곡 + 머신러닝</div><div class="go">열기 ↗</div>
         </a>
 
         <a class="toolcard" data-tags="game english math reading funbrain elementary" href="https://www.funbrain.com/" target="_blank" rel="noopener">
           <div class="value b">좋음 · 영어권 자료</div><div class="kind">게임·읽기</div><h3>Funbrain</h3>
-          <p>Pre-K부터 8학년까지 게임·책·영상이 학년별로 정리돼 있다. Math Baseball, Grammar Gorillas 같은 짧은 게임을 골라 쓰기 좋다.</p>
+          <div class="toolbullets">Pre-K부터 8학년까지 게임·책·영상이 학년별로 정리돼 있다. Math Baseball, Grammar Gorillas 같은 짧은 게임을 골라 쓰기 좋다.</div>
           <div class="toolnote">영어 중심이고 광고가 있으므로 교사가 특정 활동 링크를 골라 주는 편이 좋다.</div><div class="go">열기 ↗</div>
         </a>
         <a class="toolcard" data-tags="social geography game streetview neal fun" href="https://neal.fun/wonders-of-street-view/" target="_blank" rel="noopener">
           <div class="value a">강추 · 사회</div><div class="kind">사회·지리</div><h3>Wonders of Street View</h3>
-          <p>낯선 장소를 갑자기 보여 주며 ‘여기가 어디일까’를 추론하게 한다. 위치 추정과 관찰 근거 말하기에 좋다.</p>
+          <div class="toolbullets">낯선 장소를 갑자기 보여 주며 ‘여기가 어디일까’를 추론하게 한다. 위치 추정과 관찰 근거 말하기에 좋다.</div>
           <div class="tip">써볼 때: 세계 지리·관찰 추론</div><div class="go">열기 ↗</div>
         </a>
         <a class="toolcard" data-tags="game 저학년 mouse motor rocks neal" href="https://neal.fun/rocks/" target="_blank" rel="noopener">
           <div class="value c">틈새 활용</div><div class="kind">조작·감각</div><h3>Rocks</h3>
-          <p>돌을 쌓는 단순한 인터랙션. 교과성은 낮지만 저학년 마우스 조작이나 잠깐의 집중 활동에는 쓸 수 있다.</p>
+          <div class="toolbullets">돌을 쌓는 단순한 인터랙션. 교과성은 낮지만 저학년 마우스 조작이나 잠깐의 집중 활동에는 쓸 수 있다.</div>
           <div class="tip">써볼 때: 저학년 기기 조작 연습</div><div class="go">열기 ↗</div>
         </a>
 
-        <a class="toolcard" data-tags="game present quiz 참여 저학년" href="https://www.blooket.com/" target="_blank" rel="noopener"><div class="kind">게임·퀴즈</div><h3>Blooket</h3><p>문제 세트를 여러 게임 방식으로 돌릴 수 있다. 짧은 복습, 팀 대항 활동에 좋다.</p><div class="tip">써볼 때: 수업 끝 5분 복습</div><div class="go">열기 ↗</div></a>
-        <a class="toolcard" data-tags="game 영어 전자칠판 quiz" href="https://www.baamboozle.com/" target="_blank" rel="noopener"><div class="kind">게임·퀴즈</div><h3>Baamboozle</h3><p>한 화면으로 팀 게임을 하기 좋다. 영어 표현, 단어, 상식 퀴즈에 편하다.</p><div class="tip">써볼 때: 전자칠판 한 대로</div><div class="go">열기 ↗</div></a>
-        <a class="toolcard" data-tags="game quiz 한국어" href="https://thinkerbell.co.kr/" target="_blank" rel="noopener"><div class="kind">게임·퀴즈</div><h3>띵커벨</h3><p>한국어 환경에서 퀴즈, 토론, 참여 수업에 쓰기 좋다.</p><div class="tip">써볼 때: 참여형 형성평가</div><div class="go">열기 ↗</div></a>
-        <a class="toolcard" data-tags="game math create 도형" href="https://mathigon.org/polypad" target="_blank" rel="noopener"><div class="kind">수학·과학</div><h3>Mathigon Polypad</h3><p>수 조작, 도형, 분수, 패턴을 만지며 볼 수 있는 수학 도구다.</p><div class="tip">써볼 때: 3~5학년 수학</div><div class="go">열기 ↗</div></a>
-        <a class="toolcard" data-tags="math science 시뮬레이션" href="https://phet.colorado.edu/ko/" target="_blank" rel="noopener"><div class="kind">수학·과학</div><h3>PhET</h3><p>전기, 힘, 빛, 상태 변화 등 시뮬레이션 자료가 많다.</p><div class="tip">써볼 때: 과학 예측-검증</div><div class="go">열기 ↗</div></a>
-        <a class="toolcard" data-tags="math geometry science" href="https://www.geogebra.org/" target="_blank" rel="noopener"><div class="kind">수학·과학</div><h3>GeoGebra</h3><p>도형, 함수, 좌표, 측정을 시각적으로 다루기 좋다.</p><div class="tip">써볼 때: 도형 변화 보기</div><div class="go">열기 ↗</div></a>
-        <a class="toolcard" data-tags="create present 디자인 포스터" href="https://www.canva.com/education/" target="_blank" rel="noopener"><div class="kind">만들기</div><h3>Canva Education</h3><p>포스터, 발표, 카드, 학급 자료 만들기에 편하다.</p><div class="tip">써볼 때: 결과 정리와 발표</div><div class="go">열기 ↗</div></a>
-        <a class="toolcard" data-tags="create writing 책 영어" href="https://bookcreator.com/" target="_blank" rel="noopener"><div class="kind">만들기</div><h3>Book Creator</h3><p>간단한 전자책, 말하기 책, 학급 작품집 만들기에 좋다.</p><div class="tip">써볼 때: 영어·국어 결과물</div><div class="go">열기 ↗</div></a>
-        <a class="toolcard" data-tags="present board 공유" href="https://padlet.com/" target="_blank" rel="noopener"><div class="kind">공유·발표</div><h3>Padlet</h3><p>작품 게시, 생각 모으기, 질문 게시판, 갤러리 토크에 잘 맞는다.</p><div class="tip">써볼 때: 작품과 프롬프트 함께 올리기</div><div class="go">열기 ↗</div></a>
-        <a class="toolcard" data-tags="present 발표 질문 자료" href="https://www.mentimeter.com/" target="_blank" rel="noopener"><div class="kind">공유·발표</div><h3>Mentimeter</h3><p>질문, 워드클라우드, 즉석 응답 정리에 좋다.</p><div class="tip">써볼 때: 도입 질문</div><div class="go">열기 ↗</div></a>
-        <a class="toolcard" data-tags="ai create 그림 미술" href="https://artsandculture.google.com/" target="_blank" rel="noopener"><div class="kind">미술·사회</div><h3>Google Arts & Culture</h3><p>실제 작품, 전시, 게임형 미술 활동을 볼 수 있다.</p><div class="tip">써볼 때: 사조 실제 작품 먼저 보기</div><div class="go">열기 ↗</div></a>
-        <a class="toolcard" data-tags="social science geography" href="https://earth.google.com/web/" target="_blank" rel="noopener"><div class="kind">사회·과학</div><h3>Google Earth</h3><p>지역 탐구, 지형 읽기, 공간 비교에 좋다.</p><div class="tip">써볼 때: 사회 지역 조사</div><div class="go">열기 ↗</div></a>
-        <a class="toolcard" data-tags="music create game" href="https://musiclab.chromeexperiments.com/" target="_blank" rel="noopener"><div class="kind">예술</div><h3>Chrome Music Lab</h3><p>리듬, 멜로디, 소리의 원리를 재미있게 만질 수 있다.</p><div class="tip">써볼 때: 음악·과학 연결</div><div class="go">열기 ↗</div></a>
-        <a class="toolcard" data-tags="ai machine learning 만들기" href="https://teachablemachine.withgoogle.com/" target="_blank" rel="noopener"><div class="kind">AI 체험</div><h3>Teachable Machine</h3><p>이미지, 소리, 자세 데이터를 모아 간단한 분류기를 만들 수 있다.</p><div class="tip">써볼 때: AI가 왜 틀리는지 보기</div><div class="go">열기 ↗</div></a>
-        <a class="toolcard" data-tags="ai coding game" href="https://machinelearningforkids.co.uk/" target="_blank" rel="noopener"><div class="kind">AI 체험</div><h3>Machine Learning for Kids</h3><p>아이들이 분류 모델을 만들고 Scratch와 연결해 볼 수 있다.</p><div class="tip">써볼 때: AI + 블록코딩</div><div class="go">열기 ↗</div></a>
-        <a class="toolcard" data-tags="coding game ai" href="https://scratch.mit.edu/" target="_blank" rel="noopener"><div class="kind">코딩</div><h3>Scratch</h3><p>이야기, 게임, 퀴즈, 분류기 연결 등 여러 활동의 바탕이 된다.</p><div class="tip">써볼 때: 작은 게임 만들기</div><div class="go">열기 ↗</div></a>
-        <a class="toolcard" data-tags="coding 한국어 ai" href="https://playentry.org/" target="_blank" rel="noopener"><div class="kind">코딩</div><h3>엔트리</h3><p>저학년부터 익숙하게 쓰기 좋은 국내 블록코딩 플랫폼이다.</p><div class="tip">써볼 때: AI 블록과 함께</div><div class="go">열기 ↗</div></a>
-        <a class="toolcard" data-tags="ai writing study" href="https://chatgpt.com/" target="_blank" rel="noopener"><div class="kind">생성형 AI</div><h3>ChatGPT</h3><p>질문형 피드백, 오답 생성, 이야기 구조 잡기, 코드 초안 만들기에 쓸 수 있다.</p><div class="tip">써볼 때: 답 대신 질문 받기</div><div class="go">열기 ↗</div></a>
-        <a class="toolcard" data-tags="ai writing study google" href="https://gemini.google.com/" target="_blank" rel="noopener"><div class="kind">생성형 AI</div><h3>Gemini</h3><p>짧은 자료 정리, 이미지/문서 기반 질문 등에 활용할 수 있다.</p><div class="tip">써볼 때: 자료 요약과 질문</div><div class="go">열기 ↗</div></a>
-        <a class="toolcard" data-tags="ai study notebook 자료" href="https://notebooklm.google.com/" target="_blank" rel="noopener"><div class="kind">생성형 AI</div><h3>NotebookLM</h3><p>교사가 넣은 자료 안에서 질문과 요약을 하게 할 수 있다.</p><div class="tip">써볼 때: 자료 근거 찾기</div><div class="go">열기 ↗</div></a>
+        <a class="toolcard" data-tags="game present quiz 참여 저학년" href="https://www.blooket.com/" target="_blank" rel="noopener"><div class="kind">게임·퀴즈</div><h3>Blooket</h3><div class="toolbullets">문제 세트를 여러 게임 방식으로 돌릴 수 있다. 짧은 복습, 팀 대항 활동에 좋다.</div><div class="tip">써볼 때: 수업 끝 5분 복습</div><div class="go">열기 ↗</div></a>
+        <a class="toolcard" data-tags="game 영어 전자칠판 quiz" href="https://www.baamboozle.com/" target="_blank" rel="noopener"><div class="kind">게임·퀴즈</div><h3>Baamboozle</h3><div class="toolbullets">한 화면으로 팀 게임을 하기 좋다. 영어 표현, 단어, 상식 퀴즈에 편하다.</div><div class="tip">써볼 때: 전자칠판 한 대로</div><div class="go">열기 ↗</div></a>
+        <a class="toolcard" data-tags="game quiz 한국어" href="https://thinkerbell.co.kr/" target="_blank" rel="noopener"><div class="kind">게임·퀴즈</div><h3>띵커벨</h3><div class="toolbullets">한국어 환경에서 퀴즈, 토론, 참여 수업에 쓰기 좋다.</div><div class="tip">써볼 때: 참여형 형성평가</div><div class="go">열기 ↗</div></a>
+        <a class="toolcard" data-tags="game math create 도형" href="https://mathigon.org/polypad" target="_blank" rel="noopener"><div class="kind">수학·과학</div><h3>Mathigon Polypad</h3><div class="toolbullets">수 조작, 도형, 분수, 패턴을 만지며 볼 수 있는 수학 도구다.</div><div class="tip">써볼 때: 3~5학년 수학</div><div class="go">열기 ↗</div></a>
+        <a class="toolcard" data-tags="math science 시뮬레이션" href="https://phet.colorado.edu/ko/" target="_blank" rel="noopener"><div class="kind">수학·과학</div><h3>PhET</h3><div class="toolbullets">전기, 힘, 빛, 상태 변화 등 시뮬레이션 자료가 많다.</div><div class="tip">써볼 때: 과학 예측-검증</div><div class="go">열기 ↗</div></a>
+        <a class="toolcard" data-tags="math geometry science" href="https://www.geogebra.org/" target="_blank" rel="noopener"><div class="kind">수학·과학</div><h3>GeoGebra</h3><div class="toolbullets">도형, 함수, 좌표, 측정을 시각적으로 다루기 좋다.</div><div class="tip">써볼 때: 도형 변화 보기</div><div class="go">열기 ↗</div></a>
+        <a class="toolcard" data-tags="create present 디자인 포스터" href="https://www.canva.com/education/" target="_blank" rel="noopener"><div class="kind">만들기</div><h3>Canva Education</h3><div class="toolbullets">포스터, 발표, 카드, 학급 자료 만들기에 편하다.</div><div class="tip">써볼 때: 결과 정리와 발표</div><div class="go">열기 ↗</div></a>
+        <a class="toolcard" data-tags="create writing 책 영어" href="https://bookcreator.com/" target="_blank" rel="noopener"><div class="kind">만들기</div><h3>Book Creator</h3><div class="toolbullets">간단한 전자책, 말하기 책, 학급 작품집 만들기에 좋다.</div><div class="tip">써볼 때: 영어·국어 결과물</div><div class="go">열기 ↗</div></a>
+        <a class="toolcard" data-tags="present board 공유" href="https://padlet.com/" target="_blank" rel="noopener"><div class="kind">공유·발표</div><h3>Padlet</h3><div class="toolbullets">작품 게시, 생각 모으기, 질문 게시판, 갤러리 토크에 잘 맞는다.</div><div class="tip">써볼 때: 작품과 프롬프트 함께 올리기</div><div class="go">열기 ↗</div></a>
+        <a class="toolcard" data-tags="present 발표 질문 자료" href="https://www.mentimeter.com/" target="_blank" rel="noopener"><div class="kind">공유·발표</div><h3>Mentimeter</h3><div class="toolbullets">질문, 워드클라우드, 즉석 응답 정리에 좋다.</div><div class="tip">써볼 때: 도입 질문</div><div class="go">열기 ↗</div></a>
+        <a class="toolcard" data-tags="ai create 그림 미술" href="https://artsandculture.google.com/" target="_blank" rel="noopener"><div class="kind">미술·사회</div><h3>Google Arts & Culture</h3><div class="toolbullets">실제 작품, 전시, 게임형 미술 활동을 볼 수 있다.</div><div class="tip">써볼 때: 사조 실제 작품 먼저 보기</div><div class="go">열기 ↗</div></a>
+        <a class="toolcard" data-tags="social science geography" href="https://earth.google.com/web/" target="_blank" rel="noopener"><div class="kind">사회·과학</div><h3>Google Earth</h3><div class="toolbullets">지역 탐구, 지형 읽기, 공간 비교에 좋다.</div><div class="tip">써볼 때: 사회 지역 조사</div><div class="go">열기 ↗</div></a>
+        <a class="toolcard" data-tags="music create game" href="https://musiclab.chromeexperiments.com/" target="_blank" rel="noopener"><div class="kind">예술</div><h3>Chrome Music Lab</h3><div class="toolbullets">리듬, 멜로디, 소리의 원리를 재미있게 만질 수 있다.</div><div class="tip">써볼 때: 음악·과학 연결</div><div class="go">열기 ↗</div></a>
+        <a class="toolcard" data-tags="ai machine learning 만들기" href="https://teachablemachine.withgoogle.com/" target="_blank" rel="noopener"><div class="kind">AI 체험</div><h3>Teachable Machine</h3><div class="toolbullets">이미지, 소리, 자세 데이터를 모아 간단한 분류기를 만들 수 있다.</div><div class="tip">써볼 때: AI가 왜 틀리는지 보기</div><div class="go">열기 ↗</div></a>
+        <a class="toolcard" data-tags="ai coding game" href="https://machinelearningforkids.co.uk/" target="_blank" rel="noopener"><div class="kind">AI 체험</div><h3>Machine Learning for Kids</h3><div class="toolbullets">아이들이 분류 모델을 만들고 Scratch와 연결해 볼 수 있다.</div><div class="tip">써볼 때: AI + 블록코딩</div><div class="go">열기 ↗</div></a>
+        <a class="toolcard" data-tags="coding game ai" href="https://scratch.mit.edu/" target="_blank" rel="noopener"><div class="kind">코딩</div><h3>Scratch</h3><div class="toolbullets">이야기, 게임, 퀴즈, 분류기 연결 등 여러 활동의 바탕이 된다.</div><div class="tip">써볼 때: 작은 게임 만들기</div><div class="go">열기 ↗</div></a>
+        <a class="toolcard" data-tags="coding 한국어 ai" href="https://playentry.org/" target="_blank" rel="noopener"><div class="kind">코딩</div><h3>엔트리</h3><div class="toolbullets">저학년부터 익숙하게 쓰기 좋은 국내 블록코딩 플랫폼이다.</div><div class="tip">써볼 때: AI 블록과 함께</div><div class="go">열기 ↗</div></a>
+        <a class="toolcard" data-tags="ai writing study" href="https://chatgpt.com/" target="_blank" rel="noopener"><div class="kind">생성형 AI</div><h3>ChatGPT</h3><div class="toolbullets">질문형 피드백, 오답 생성, 이야기 구조 잡기, 코드 초안 만들기에 쓸 수 있다.</div><div class="tip">써볼 때: 답 대신 질문 받기</div><div class="go">열기 ↗</div></a>
+        <a class="toolcard" data-tags="ai writing study google" href="https://gemini.google.com/" target="_blank" rel="noopener"><div class="kind">생성형 AI</div><h3>Gemini</h3><div class="toolbullets">짧은 자료 정리, 이미지/문서 기반 질문 등에 활용할 수 있다.</div><div class="tip">써볼 때: 자료 요약과 질문</div><div class="go">열기 ↗</div></a>
+        <a class="toolcard" data-tags="ai study notebook 자료" href="https://notebooklm.google.com/" target="_blank" rel="noopener"><div class="kind">생성형 AI</div><h3>NotebookLM</h3><div class="toolbullets">교사가 넣은 자료 안에서 질문과 요약을 하게 할 수 있다.</div><div class="tip">써볼 때: 자료 근거 찾기</div><div class="go">열기 ↗</div></a>
       </div>
     </section>
 
     <section id="subjects">
-      <div class="eyebrow">교과별 아이디어</div>
-      <h2>교과에 바로 붙는 짧은 아이디어</h2>
-      <div class="tablewrap">
-        <table>
-          <thead><tr><th>교과</th><th>해볼 일</th><th>AI나 도구의 역할</th><th>학생이 남길 것</th></tr></thead>
-          <tbody>
-            <tr><td>국어</td><td>동화 결말 바꾸기, 질문형 피드백</td><td>질문 3개만 주기</td><td>고쳐 쓴 이유</td></tr>
-            <tr><td>수학</td><td>오답 탐정, 수학 수수께끼</td><td>그럴듯한 오답 만들기</td><td>오류 설명</td></tr>
-            <tr><td>과학</td><td>관찰-추론 구분, 반례 찾기</td><td>변수 바꾼 상황 제시</td><td>예측과 결과</td></tr>
-            <tr><td>사회</td><td>지역 소개, 다양한 관점 읽기</td><td>관점이 다른 질문 던지기</td><td>근거 문장</td></tr>
-            <tr><td>영어</td><td>상황 역할극, 말풍선 채우기</td><td>짧은 대화 틀 만들기</td><td>실제 말한 표현</td></tr>
-            <tr><td>미술</td><td>사조 비교, 나만의 상징물 만들기</td><td>시대 특징 반영 이미지 생성</td><td>프롬프트와 수정 이유</td></tr>
-            <tr><td>음악</td><td>리듬 규칙 찾기, 소리 그림책</td><td>패턴 제안</td><td>변형한 패턴</td></tr>
-            <tr><td>SW</td><td>HTML 게임, 블록코딩 앱</td><td>기능별 초안 만들기</td><td>테스트 기록</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section id="apps">
-      <div class="eyebrow">웹앱 만들기</div>
-      <h2>학생이 개념을 이해하도록 돕는 작은 앱</h2>
-      <p class="lead">앱은 멋있게 만드는 것이 목적이 아닙니다. <b>개념을 만져 보고, 틀려 보고, 다시 고치는 경험</b>을 만드는 것이 목적입니다.</p>
-      <div class="grid2">
-        <div class="lesson"><div class="meta">수학</div><h3>분수 비교 앱</h3><p>두 분수를 제시하고 더 큰 쪽을 고르게 한다. 틀리면 그림 모델 또는 공통분모 힌트를 주고, 맞히면 왜 그런지 설명하게 한다.</p><div class="prompt" id="pFrac">초등학생용 분수 비교 웹앱을 HTML 하나로 만들어줘. 두 분수를 비교하게 하고, 정답 여부에 따라 힌트를 보여줘. 힌트는 그림 모델 또는 공통분모 방식 둘 중 하나로 설명해줘. 디자인은 단순하고 버튼은 크게 해줘.<button class="copy" data-copy="pFrac">복사</button></div></div>
-        <div class="lesson"><div class="meta">국어</div><h3>맞춤법 게임</h3><p>헷갈리는 낱말을 고르는 게임. 하트, 점수, 다시하기, 힌트를 넣고 오답에서 어떻게 반응하는지 꼭 확인한다.</p><div class="prompt" id="pSpell">초등학생용 맞춤법 퀴즈 게임을 HTML 하나로 만들어줘. 보기 3개 중 맞는 표현을 고르게 하고, 오답을 고르면 이유를 짧게 알려줘. 하트 3개, 점수, 다시하기 버튼을 넣어줘. 버튼은 크게, 글자는 읽기 쉽게 해줘.<button class="copy" data-copy="pSpell">복사</button></div></div>
-        <div class="lesson"><div class="meta">과학</div><h3>전기회로 시뮬레이션 설명기</h3><p>직접 정교한 시뮬레이션을 만드는 것보다, 회로 그림을 보여 주고 예측하게 한 뒤 설명을 덧붙이는 방식이 초등에는 더 적절할 수 있다.</p><div class="prompt" id="pCircuit">초등학생용 전기회로 학습 페이지를 HTML 하나로 만들어줘. 전지, 전구, 스위치가 있는 간단한 회로 그림을 몇 개 제시하고, 어떤 경우 전구가 켜지는지 예측하게 해줘. 정답 뒤에는 짧은 이유 설명을 붙여줘.<button class="copy" data-copy="pCircuit">복사</button></div></div>
-        <div class="lesson"><div class="meta">영어</div><h3>역할극 대화 연습기</h3><p>상황을 하나 고르면 4턴 대화를 연습하고, 학생이 한 문장을 바꿔 말할 수 있게 한다.</p><div class="prompt" id="pEnglish">초등학생용 영어 역할극 연습 페이지를 HTML 하나로 만들어줘. 상황 카드를 고르면 4턴 대화가 나오고, 학생이 마지막 문장을 직접 말해 보거나 입력할 수 있게 해줘. 표현은 쉽고 화면은 단순하게 해줘.<button class="copy" data-copy="pEnglish">복사</button></div></div>
-      </div>
-    </section>
-
-    <section id="assessment">
-      <div class="eyebrow">평가</div>
-      <h2>완성본만 보지 말고, 과정에서 볼 것</h2>
-      <div class="grid3">
-        <div class="card"><h3>판단</h3><p>무엇을 AI에게 맡길지 스스로 정했는가? 모호한 요청을 구체적으로 고쳤는가?</p></div>
-        <div class="card"><h3>검증</h3><p>자료를 대조했는가? 오류를 찾았는가? 다시 고친 뒤 확인했는가?</p></div>
-        <div class="card"><h3>적용</h3><p>같은 방식이 다른 문제에도 이어지는가? 질문 구조나 검증 순서를 옮길 수 있는가?</p></div>
-      </div>
-      <div class="tablewrap" style="margin-top:18px">
-        <table>
-          <thead><tr><th>볼 것</th><th>예시</th></tr></thead>
-          <tbody>
-            <tr><td>프롬프트 변화</td><td>처음 요청과 고친 요청이 둘 다 남아 있는가</td></tr>
-            <tr><td>검증 기록</td><td>어떤 작품/자료/입력값으로 확인했는가</td></tr>
-            <tr><td>설명</td><td>왜 그 사조처럼 보이는지, 왜 오답인지, 왜 다시 고쳤는지 말할 수 있는가</td></tr>
-            <tr><td>전이</td><td>다음 문제에 같은 틀을 어떻게 쓸지 적었는가</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section id="verify">
-      <div class="eyebrow">검증</div>
-      <h2>항상 마지막에 이것은 확인한다</h2>
-      <div class="grid4">
-        <div class="card red"><h3>사실</h3><p>시대, 인물, 용어, 교과 개념이 맞는지 본다.</p></div>
-        <div class="card red"><h3>맥락</h3><p>그 시대에 없는 물건, 옷, 건물이 섞이지 않았는지 본다.</p></div>
-        <div class="card red"><h3>작동</h3><p>웹앱은 실패할 때도 제대로 되는지 본다.</p></div>
-        <div class="card red"><h3>안전</h3><p>개인정보, 초상권, 과도한 자동완성은 피한다.</p></div>
-      </div>
-      <div class="callout"><b>특히 미술사조 수업에서는</b> 시대 단서가 맞는지, 후원자와 목적이 그림에서 보이는지, 학생이 설명으로 그 이유를 말할 수 있는지를 함께 봅니다.</div>
-    </section>
-
-    <section id="downloads">
-      <div class="eyebrow">다운로드</div>
-      <h2>바로 가져갈 자료</h2>
-      <div class="downloadbar">
-        <button class="btn" onclick="downloadPromptPack()">프롬프트 모음 TXT</button>
-        <button class="btn" onclick="downloadOVT()">OVT 기록지 TXT</button>
-        <button class="btn" onclick="downloadChecklist()">검증 체크리스트 TXT</button>
-        <button class="btn" onclick="downloadProjectCanvas()">프로젝트 수업 캔버스 TXT</button>
-        <button class="btn" onclick="downloadToolLinks()">도구 링크 모음 TXT</button>
-        <button class="btn" onclick="downloadCaseArchive()">수업 사례 목록 TSV</button>
-        <button class="btn" onclick="downloadGoogleFlow()">Google 1인 1기기 흐름 TXT</button>
-      </div>
-      <p class="small">OVT 기록지, Google 수업 흐름, 프로젝트 캔버스, 사이트 주소를 필요한 것만 내려받아 사용한다.</p>
-    </section>
-  </main>
+  <div class="eyebrow">교과별 아이디어</div>
+  <h2>한 단원에 하나씩 붙이기</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>교과</th><th>활동</th><th>AI·도구</th><th>학생 산출</th></tr></thead>
+    <tbody>
+      <tr><td>국어</td><td>질문형 피드백 · 오독 찾기 · 동화 결말 바꾸기 · 낱말 의미망</td><td>ChatGPT · 꼬맨틀 · Word2Vec</td><td>고친 이유 · 근거 문장 · 어휘 관계</td></tr>
+      <tr><td>수학</td><td>오답 탐정 · 분수 던전 · 도형 조작 · 논리퍼즐</td><td>Mathigon · EBSMath · Bridges · 생성형 웹앱</td><td>오류 원인 · 풀이 설명 · 테스트 기록</td></tr>
+      <tr><td>과학</td><td>예측-검증 · 변수 조작 · 크기 비교 · AI 분류</td><td>PhET · Scale of Universe · Teachable Machine</td><td>예측/결과 비교 · 반례 · 분류 오류</td></tr>
+      <tr><td>사회</td><td>세계 여행상품 · 지역 탐색 · 역사 선택 · 미디어 읽기</td><td>Google Earth · ThingLink · GooseChase</td><td>근거 지도 · 선택 이유 · 피치</td></tr>
+      <tr><td>도덕</td><td>딜레마 · 신뢰 게임 · AI 윤리</td><td>Moral Machine · 신뢰의 진화</td><td>판단 기준 · 다른 관점 · 기준 변화</td></tr>
+      <tr><td>영어</td><td>역할극 · 단어게임 · 의미 유사도 · 전자책</td><td>Baamboozle · ClassCard · Semantris · Book Creator</td><td>실제 말한 문장 · 수정 표현 · 녹음</td></tr>
+      <tr><td>미술</td><td>시대 배경→이미지 · 표상 읽기 · 시각기억 · 제품 디자인</td><td>이미지 생성 · Arts & Culture · Neal.fun</td><td>관찰표 · 실제 작품 대조 · 디자인 선택</td></tr>
+      <tr><td>음악</td><td>리듬·화성 조작 · AI 화성 · 몸짓 지휘</td><td>Chrome Music Lab · Ableton · Bach Doodle · Semi-Conductor</td><td>변형 패턴 · 비교 청취 · 작곡 규칙</td></tr>
+      <tr><td>체육</td><td>스포츠 설명 · 전략판 · 규칙 판정</td><td>Slides · Forms · 영상</td><td>튜토리얼 · 판정 근거 · 전략 설명</td></tr>
+      <tr><td>실과</td><td>제품 설계 · 생활 문제 · 예산 조건 · 웹앱</td><td>Canva · Design the Next iPhone · AI 코딩</td><td>설계안 · 조건표 · 프로토타입</td></tr>
+      <tr><td>창체</td><td>학교 안전 퀘스트 · 학급 영화 · 졸업 박물관 · 캠페인</td><td>GooseChase · Padlet · Sites · 영상 도구</td><td>공개 결과물 · 역할 기록 · OVT</td></tr>
+    </tbody>
+  </table></div>
+</section>
+<section id="apps">
+  <div class="eyebrow">웹앱 만들기</div>
+  <h2>설명 대신 조작 · 실패 · 비교</h2>
+  <div class="repflow">
+    <div class="r"><b>개념</b>5~8문장</div><div class="r"><b>변수</b>직접 바꾸기</div><div class="r"><b>결과</b>즉시 보기</div><div class="r"><b>실패</b>경계값·오류</div><div class="r"><b>설명</b>왜 그런지 말하기</div>
+  </div>
+  <div class="grid2">
+    <div class="lesson"><div class="meta">수학</div><h3>분수 비교</h3><ul class="compact"><li>두 분수 비교</li><li>그림 모델 / 공통분모 힌트</li><li>정답 뒤 이유 설명</li><li>같은 값·1보다 큰 분수 시험</li></ul><div class="prompt" id="pFrac">초등학생용 분수 비교 웹앱을 HTML 하나로 만들어줘. 두 분수를 비교하게 하고, 정답 여부에 따라 힌트를 보여줘. 힌트는 그림 모델 또는 공통분모 방식 둘 중 하나로 설명해줘. 같은 값인 경우와 1보다 큰 분수도 테스트할 수 있게 해줘.<button class="copy" data-copy="pFrac">복사</button></div></div>
+    <div class="lesson"><div class="meta">국어</div><h3>맞춤법 게임</h3><ul class="compact"><li>보기 3개</li><li>오답 이유</li><li>하트·점수·다시하기</li><li>연속 오답 테스트</li></ul><div class="prompt" id="pSpell">초등학생용 맞춤법 퀴즈 게임을 HTML 하나로 만들어줘. 보기 3개 중 맞는 표현을 고르게 하고, 오답을 고르면 이유를 짧게 알려줘. 하트 3개, 점수, 다시하기 버튼을 넣어줘. 연속 오답과 마지막 문제에서도 점수가 정확한지 확인할 수 있게 해줘.<button class="copy" data-copy="pSpell">복사</button></div></div>
+    <div class="lesson"><div class="meta">과학</div><h3>전기회로</h3><ul class="compact"><li>전지·전구·스위치 조합</li><li>먼저 예측</li><li>켜짐/꺼짐 확인</li><li>이유 설명</li></ul><div class="prompt" id="pCircuit">초등학생용 전기회로 학습 페이지를 HTML 하나로 만들어줘. 여러 회로 그림을 제시하고 전구가 켜질지 먼저 예측하게 해줘. 선택 뒤 결과와 이유를 보여줘. 전선이 끊긴 경우, 스위치가 열린 경우도 포함해줘.<button class="copy" data-copy="pCircuit">복사</button></div></div>
+    <div class="lesson"><div class="meta">영어</div><h3>역할극</h3><ul class="compact"><li>상황 카드</li><li>4턴 대화</li><li>마지막 문장 직접 말하기</li><li>한 표현 바꿔 재사용</li></ul><div class="prompt" id="pEnglish">초등학생용 영어 역할극 연습 페이지를 HTML 하나로 만들어줘. 상황 카드를 고르면 4턴 대화가 나오고, 마지막 문장은 학생이 직접 말하거나 입력하게 해줘. 같은 표현을 다른 장소·상황으로 바꾸는 버튼도 넣어줘.<button class="copy" data-copy="pEnglish">복사</button></div></div>
+    <div class="lesson"><div class="meta">AI 개념</div><h3>k-NN 분류</h3><ul class="compact"><li>점 직접 찍기</li><li>k=1·3·5·7 변경</li><li>가까운 이웃 표시</li><li>경계에서 결과 변화 관찰</li></ul></div>
+    <div class="lesson"><div class="meta">AI 개념</div><h3>마르코프</h3><ul class="compact"><li>현재 상태</li><li>전이확률 조정</li><li>10번 연속 실행</li><li>확률과 실제 결과 비교</li></ul></div>
+    <div class="lesson"><div class="meta">AI 개념</div><h3>유전알고리즘</h3><ul class="compact"><li>적합도</li><li>선택</li><li>교차</li><li>돌연변이</li><li>세대별 최고값</li></ul></div>
+    <div class="lesson"><div class="meta">AI 개념</div><h3>Naive Bayes</h3><ul class="compact"><li>단어별 빈도</li><li>스팸/일반 확률</li><li>처음 보는 단어</li><li>스무딩 전후 비교</li></ul></div>
+  </div>
+</section>
+<section id="assessment">
+  <div class="eyebrow">평가</div>
+  <h2>완성본 + 과정 증거</h2>
+  <div class="grid3">
+    <div class="card"><h3>내용</h3><ul class="compact"><li>교과 개념 정확성</li><li>자료 근거</li><li>표현의 적절성</li></ul></div>
+    <div class="card"><h3>판단</h3><ul class="compact"><li>AI에 맡긴 범위</li><li>학생이 직접 한 선택</li><li>버린 결과의 이유</li></ul></div>
+    <div class="card"><h3>검증</h3><ul class="compact"><li>원자료 대조</li><li>실행·테스트</li><li>오류 재현</li></ul></div>
+    <div class="card"><h3>수정</h3><ul class="compact"><li>초안→수정본 변화</li><li>피드백 반영</li><li>반영하지 않은 이유</li></ul></div>
+    <div class="card"><h3>전이</h3><ul class="compact"><li>다음 과제 적용</li><li>재사용할 절차</li><li>달라질 조건</li></ul></div>
+    <div class="card"><h3>설명</h3><ul class="compact"><li>왜 그렇게 했는지</li><li>어디서 틀렸는지</li><li>무엇을 아직 모르는지</li></ul></div>
+  </div>
+  <div class="tablewrap" style="margin-top:18px"><table>
+    <thead><tr><th>증거</th><th>받을 것</th></tr></thead>
+    <tbody>
+      <tr><td>미술</td><td>시대 배경 메모 · AI 가설 이미지 · 실제 작품 대조표 · 마지막 사조명</td></tr>
+      <tr><td>글쓰기</td><td>원문 · AI 질문 · 수정본 · 수정 이유</td></tr>
+      <tr><td>웹앱</td><td>기획 · 중간본 · 오류 기록 · 최종본 · 다른 기기 테스트</td></tr>
+      <tr><td>프로젝트</td><td>조사자료 · 역할 · 초안 · 동료피드백 · 공개본 · OVT</td></tr>
+      <tr><td>게임</td><td>규칙 설명 · 플레이 기록 · 실패 상황 · 수정 내역</td></tr>
+    </tbody>
+  </table></div>
+</section>
+<section id="verify">
+  <div class="eyebrow">검증</div>
+  <h2>제출 전 8개</h2>
+  <div class="microgrid">
+    <div class="micro"><b>사실</b><ul><li>인물·날짜·용어</li><li>교과 개념</li></ul></div>
+    <div class="micro"><b>출처</b><ul><li>원문 확인</li><li>AI 답만 근거로 사용 금지</li></ul></div>
+    <div class="micro"><b>맥락</b><ul><li>시대에 없는 요소</li><li>자료와 맞지 않는 설정</li></ul></div>
+    <div class="micro"><b>계산</b><ul><li>직접 재계산</li><li>단위·분모·범위</li></ul></div>
+    <div class="micro"><b>작동</b><ul><li>정상 입력</li><li>빈 입력·경계값·오류값</li></ul></div>
+    <div class="micro"><b>기기</b><ul><li>다른 브라우저</li><li>모바일·학생 기기</li></ul></div>
+    <div class="micro"><b>안전</b><ul><li>개인정보</li><li>초상권·공개 범위</li></ul></div>
+    <div class="micro"><b>설명</b><ul><li>학생이 이유 말하기</li><li>AI가 대신한 부분 구분</li></ul></div>
+  </div>
+</section>
+<section id="downloads">
+  <div class="eyebrow">다운로드</div>
+  <h2>필요한 것만 가져가기</h2>
+  <div class="downloadbar">
+    <a class="btn" href="downloads/image-representation-lab.txt" download>표상·이미지 활동지</a>
+    <button class="btn" onclick="downloadOVT()">OVT 기록지</button>
+    <button class="btn" onclick="downloadChecklist()">검증 체크리스트</button>
+    <button class="btn" onclick="downloadProjectCanvas()">프로젝트 수업 캔버스</button>
+    <button class="btn" onclick="downloadToolLinks()">도구 링크</button>
+    <button class="btn" onclick="downloadCaseArchive()">수업 사례 목록</button>
+    <button class="btn" onclick="downloadGoogleFlow()">Google 1인 1기기 흐름</button>
+    <a class="btn primary" href="resources.html">자료실</a>
+  </div>
+</section>
+</main>
 </div>
 
 <script>
